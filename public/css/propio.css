@@ -1,0 +1,11 @@
+p.hidden{
+  display: none;
+visibility: hidden;}
+
+div.hidden{
+  display: none;
+visibility: hidden;}
+
+.toast {
+  opacity: 1 !important;
+}
