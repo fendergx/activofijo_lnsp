@@ -28,7 +28,10 @@ Route::put('coordinacion/{id}','CoordinacionController@update')->name('coordinac
 Route::delete('coordinacion/{id}','CoordinacionController@destroy')->name('coordinacion.delete');
 
 //CRUD Areas
-
+Route::get('area', 'AreaController@index')->name('area.index');
+Route::post('area','AreaController@store')->name('area.store');
+Route::put('area/{id}','AreaController@update')->name('area.update');
+Route::delete('area/{id}','AreaController@destroy')->name('area.delete');
 
 Route::get('registrar','usuarioController@index')->name('usuario.index');
 Route::get('success','usuarioController@sucess')->name('usuario.success');
