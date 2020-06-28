@@ -22,7 +22,10 @@ Auth::routes(['register' => false]);
 //Route::get('/home', 'HomeController@index')->name('home');
 
 //CRUD Coordinaciones
-
+Route::get('coordinacion', 'CoordinacionController@index')->name('coordinacion.index');
+Route::post('coordinacion','CoordinacionController@store')->name('coordinacion.store');
+Route::put('coordinacion/{id}','CoordinacionController@update')->name('coordinacion.update');
+Route::delete('coordinacion/{id}','CoordinacionController@destroy')->name('coordinacion.delete');
 
 //CRUD Areas
 
