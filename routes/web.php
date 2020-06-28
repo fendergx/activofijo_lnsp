@@ -13,10 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('inicio.admin');
+});*/
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//CRUD Coordinaciones
+
+
+//CRUD Areas
+
+
+Route::get('registrar','usuarioController@index')->name('usuario.index');
+Route::get('success','usuarioController@sucess')->name('usuario.success');
+Route::post('usuario','usuarioController@store')->name('usuario.store');
+
+//inicio
+Route::get('admin', 'HomeController@admin')->name('inicio.admin');
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('inicio');
+
+
