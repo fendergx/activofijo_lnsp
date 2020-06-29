@@ -41,4 +41,6 @@ Route::post('usuario','usuarioController@store')->name('usuario.store');
 Route::get('admin', 'HomeController@admin')->name('inicio.admin');
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('inicio');
 
-
+//areas
+//Route:get('areas/{id}','usuarioController@areas')->name('usuario.area');
+Route::post('getareas/fetch', 'AreaController@getAreas');
