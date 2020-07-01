@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Usuario;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -50,9 +50,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nombre_usuario' => ['required'],
+            'password' => ['required'],
+            'nombres'=> ['required'],
+            'apellidos'=> ['required'],
+            'id_rol'=> ['required'],
         ]);
     }
 
@@ -64,10 +66,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        return Usuario::create([
+            'nombre_usuario' => $data['nombre_usuario'],
             'password' => Hash::make($data['password']),
+            'nombres' => $data['nombres'],
+            'apellidos' => $data['apellidos'],
+            'id_rol' => $data['id_rol'],
+            'id_coord' => $data['id_coord'],
+            'id_area' => $data['id_area'],
         ]);
     }
 }

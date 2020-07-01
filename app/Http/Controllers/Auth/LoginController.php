@@ -3,38 +3,49 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use AuthenticatesUsers;
+use App\User;
+
+//para recibir los datos como request, nueva forma
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
 
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function showLoginForm()
     {
-        $this->middleware('guest')->except('logout');
+        return view('auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        $mensajesError= [
+            'password.min' =>"Su contraseña tiene al menos 8 carácteres"
+        ];
+        $credenciales = $this->validate(request(), [
+            'nombre_usuario' => 'required|string',
+            'password'=> 'required|string'
+
+        ],$mensajesError);
+
+        //variable para capturar el nombre de usuario ingresado
+        $findUser = User::where('nombre_usuario','=',$request->nombre_usuario)->first();
+
+        if($findUser == null){
+            //return error de usuario
+            return back()->withErrors(['usuario'=>trans('El usuario ingresado no se encuentra en <br> nuestros registros')])->withInput();
+        }else if(Auth::attempt($credenciales)){
+            return redirect()->route('inicio.admin');
+        }
+        //return error de password;
+        return back()->withErrors(['password'=>trans('La contraseña ingresada es incorrecta')])->withInput();
+    }
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect('/');
     }
 }

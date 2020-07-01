@@ -20,13 +20,13 @@ class UsuariosSeeder extends Seeder
         User::create(['nombre_usuario' => 'karen.penate',
         	'password' => Hash::make('karen'),
         	'nombres' => 'Karen Elvira',
-        	'apellidos' => 'Peñate Avil',
+        	'apellidos' => 'Peñate Aviles',
         	'id_rol' => '1',
         	'id_coord' => null,
         	'id_area' => null,
         ]);
 
-        User::create(['nombre_usuario' => 'omar.orellana',
+        /*User::create(['nombre_usuario' => 'omar.orellana',
         	'password' => Hash::make('omar'),
         	'nombres' => 'Omar Enrique',
         	'apellidos' => 'Cruz Orellana',
@@ -66,6 +66,6 @@ class UsuariosSeeder extends Seeder
         	'id_rol' => '6',
         	'id_coord' => '1',
         	'id_area' => '1',
-        ]);
+        ]);*/
     }
 }
