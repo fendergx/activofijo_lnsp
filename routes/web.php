@@ -33,6 +33,8 @@ Route::post('area','AreaController@store')->name('area.store');
 Route::put('area/{id}','AreaController@update')->name('area.update');
 Route::delete('area/{id}','AreaController@destroy')->name('area.delete');
 
+
+//registrar
 Route::get('registrar','usuarioController@index')->name('usuario.index');
 Route::get('success','usuarioController@sucess')->name('usuario.success');
 Route::post('usuario','usuarioController@store')->name('usuario.store');
@@ -44,3 +46,5 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('inicio');
 //areas
 //Route:get('areas/{id}','usuarioController@areas')->name('usuario.area');
 Route::post('getareas/fetch', 'AreaController@getAreas');
+
+
