@@ -62,10 +62,14 @@ $('.modal-footer').on('click', '.addCoordinacion', function() {
                     toastr.error('Llene correctamente los campos!', 'Ha ocurrido un error', {timeOut: 7000});
                 }, 500);
                 if (data.errors.nombre_coord) {
-                    //$('.errorCoordinacion').removeClass('hidden');
-                    $('.errorCoordinacion').text(data.errors.nombre_coord);
-                    toastr.warning('La coordinacion solo puede contener letras', '', {timeOut: 3000});
-
+                    if($('#nombre_coord').val() ==''){
+                        toastr.warning('Debe ingresar el nombre de la coordinación');
+                    }else{
+                        //$('.errorCoordinacion').removeClass('hidden');
+                        $('.errorCoordinacion').text(data.errors.nombre_coord);
+                        toastr.warning('La coordinacion solo puede contener letras', '', {timeOut: 3000});
+                    }
+                    
                 }
             } else {
                 toastr.success('Se ha agregado la coordinacion!', 'Éxito!', {timeOut: 2300});
@@ -105,10 +109,14 @@ $('.modal-footer').on('click', '.edit', function() {
                     toastr.error('Llene correctamente los campos!', 'Error', {timeOut: 7000});
                 }, 500);
                 if (data.errors.nombre_coord) {
-                    //$('.errorCoordinacion').removeClass('hidden');
-                    $('.errorCoordinacion').text(data.errors.nombre_coord);
-                    toastr.warning('El nombre de coordinación es requerido', '', {timeOut: 3000});
-
+                    if($('#nombre_coord').val() ==''){
+                        toastr.warning('Debe ingresar el nombre de la coordinación');
+                    }else{
+                        //$('.errorCoordinacion').removeClass('hidden');
+                        $('.errorCoordinacion').text(data.errors.nombre_coord);
+                        toastr.warning('La coordinacion solo puede contener letras', '', {timeOut: 3000});
+                    }
+                    
                 }
                 
             } else {

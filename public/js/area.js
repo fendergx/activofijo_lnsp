@@ -71,11 +71,17 @@ $('.modal-footer').on('click', '.addArea', function() {
                     toastr.error('Llene correctamente los campos!', 'Ha ocurrido un error', {timeOut: 7000});
                 }, 500);
                 if (data.errors.nombre_area) {
+                    if($('#nombre_area').val() == ''){
+                        toastr.warning('Debe de ingresar el nombre de área');
+                    }else{
+
+
                     //$('.errorCoordinacion').removeClass('hidden');
                     $('.errorArea').text(data.errors.nombre_area);
-                    toastr.warning('El área solo puede contener letras', '', {timeOut: 3000});
+                    toastr.warning('El área solo puede contener letras');
+                }
 
-                }else if (data.errors.id_coord) {
+            }else if (data.errors.id_coord) {
                     //$('.errorCoordinacion').removeClass('hidden');
                     $('.errorArea').text(data.errors.id_coord);
                     toastr.warning('Debe seleccionar una coordinación', '', {timeOut: 3000});
@@ -97,6 +103,9 @@ $('.modal-footer').on('click', '.addArea', function() {
 $(document).on('click', '.edit-modal', function() {
     $('#id_edit').val($(this).data('id'));
     $('#editar_area').val($(this).data('area'));
+    // parte importante para obtener la coordinación asociada
+    $('#id_coordinacion').val($(this).data('coord_id'));
+    //asociar el id al modal
     id = $('#id_edit').val();
     $('#modal-editar-area').modal('show');
 });
@@ -139,8 +148,8 @@ $('.modal-footer').on('click', '.edit', function() {
             } else {
                 toastr.success('Se ha editado el área correctamente!', 'Éxito!', {timeOut: 2300});
                 setTimeout(function(){
-                 window.location.reload(1);
-             }, 3200);
+                   window.location.reload(1);
+               }, 3200);
                 //$('.itemArea' + data.id_area).replaceWith("<tr class='itemArea" + data.id_area + "'><td>" + data.nombre_area+"</td><td>"+nombre_coordinacion2+"</td><td><button class='edit-modal btn btn-info' data-id='"+data.id_area+"' data-area='"+data.nombre_area+"'data-coordinacion='"+coordinacion+"'><span class='fas fa-edit'></span>&nbsp;Editar</button> <button class='delete-modal btn btn-danger' data-id='"+data.id_area+"'><span class='fas fa-trash'></span>&nbsp;Eliminar</button></td>");
 
             }

@@ -7,7 +7,7 @@ toastr.options.hideMethod = 'slideUp';
 //metodo de quitar el toast al presionar el boton de cerrar
 toastr.options.closeMethod = 'slideUp';
 //habilita-deshabilita que aparezcan toast con la misma información
-toastr.options.preventDuplicates = false;
+toastr.options.preventDuplicates = true;
 //tiempo por defecto que dura un toast
 toastr.options.timeOut = 5000;
 //habilita-deshabilita la barra de progreso en el toast
