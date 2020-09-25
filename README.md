@@ -7,6 +7,37 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+
+## Instalación
+
+primero debe de clonarse el repositorio
+
+```
+git clone https://github.com/fendergx/activofijo_lnsp
+```
+
+Luego de eso se debe meter a la carpeta e instalar las cosas necesarias para luego correrlo
+
+```
+cd activofijo_lnsp
+composer install
+php artisan key:generate
+```
+
+Ya ahora puede empezarse a probar, se pueden poner los datos iniciales (puede configurar su base de datos en el archivo .env)
+
+```
+php artisan migrate
+//para borrar y crear
+php artisan migrate:fresh
+php artisan db:seed
+
+//correr, para detener es Control+C
+php artisan serve
+```
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
