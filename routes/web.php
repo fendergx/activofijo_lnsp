@@ -34,6 +34,8 @@ Route::put('area/{id}','AreaController@update')->name('area.update');
 Route::delete('area/{id}','AreaController@destroy')->name('area.delete');
 
 
+Route::get('test2', 'AreaController@test2')->name('area.test2');
+
 //registrar
 Route::get('registrar','usuarioController@index')->name('usuario.index');
 Route::get('success','usuarioController@sucess')->name('usuario.success');
@@ -96,3 +98,6 @@ Route::get('persona', 'PersonaRespController@index')->name('persona.index');
 Route::post('persona', 'PersonaRespController@store')->name('persona.store');
 Route::put('persona/{id}','PersonaRespController@update')->name('persona.update');
 Route::delete('persona/{id}','PersonaRespController@destroy')->name('persona.delete');
+
+
+Route::get('test', 'AreaController@test')->name('area.test');

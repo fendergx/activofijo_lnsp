@@ -27,7 +27,7 @@
 						<div class="col-sm-8">
 							<select class="form-control" id="coordinacion">
 								<option selected disabled value="">Seleccione una coordinación</option>
-								@foreach($coordinaciones as $indexKey => $coordinacion)
+								@foreach($coordinaciones ?? '' as $indexKey => $coordinacion)
 								<option value="{{$coordinacion->id_coord}}">{{$coordinacion->nombre_coord}}</option>	
 								@endforeach
 							</select>

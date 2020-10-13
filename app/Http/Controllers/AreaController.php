@@ -27,14 +27,28 @@ class AreaController extends Controller
 
     protected $rules =[
         'nombre_area' => 'required|min:2|max:128|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ .,# ]+$/i',
-        'id_coord' =>'required',];
+        'id_coord' =>'required',
+    ];
 
     public function index()
     {
         $areas = Area::all();
         $coordinaciones = Coordinacion::all();
         return view('area.index', ['areas' => $areas,'coordinaciones' => $coordinaciones]);
+        
     }
+
+    public function test()
+    {
+        return view('test');
+    }
+
+    public function test2()
+    {
+        $areas = Area::paginate(10);
+        return view('test2',compact('areas'));
+    }
+
 
     //función para obtener las áreas según la coordinación escogida
     public function getAreas(Request $request){
