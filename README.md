@@ -21,8 +21,16 @@ Luego de eso se debe meter a la carpeta e instalar las cosas necesarias para lue
 ```
 cd activofijo_lnsp
 composer install
+
+```
+
+luego debes de copiar el archivo .env que desees puede ser el mysql o postgres a un archivo **.env** nuevo, configurar tus datos y luego generar la llave
+
+```
 php artisan key:generate
 ```
+
+
 
 Ya ahora puede empezarse a probar, se pueden poner los datos iniciales (puede configurar su base de datos en el archivo .env)
 
