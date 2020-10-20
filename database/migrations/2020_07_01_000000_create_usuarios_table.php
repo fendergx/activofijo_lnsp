@@ -22,6 +22,7 @@ class CreateUsuariosTable extends Migration
             $table->string('password',1024);
             $table->string('nombres');
             $table->string('apellidos');
+            $table->string('cargo')->nullable();
             //llaves foráneas
             $table->unsignedBigInteger('id_rol');
             $table->foreign('id_rol')->references('id_rol')->on('roles');
