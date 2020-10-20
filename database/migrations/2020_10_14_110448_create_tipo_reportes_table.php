@@ -16,7 +16,7 @@ class CreateTipoReportesTable extends Migration
         Schema::create('tipo_reportes', function (Blueprint $table) {
             $table->bigIncrements('id_tipo_rep');
             $table->string('nombre_tipo_rep')->unique();
-            $table->string('descrip_tipo_rep');
+            $table->string('descrip_tipo_rep')->nullable();
             $table->boolean('puede_sol')->default(0);
 
             //creado y actualizado a
