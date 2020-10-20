@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Response;
 
-use App\Cliente_preparaduria;
+use App\Models\Cliente_preparaduria;
 
 class ClienteController extends Controller
 {

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Response;
 
-use App\Estado_af;
+use App\Models\Estado_af;
 
 
 

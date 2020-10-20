@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 
-use App\User;
-use App\Coordinacion;
-use App\Rol;
-use App\Area;
+use App\Models\User;
+use App\Models\Coordinacion;
+use App\Models\Rol;
+use App\Models\Area;
 
 use Illuminate\Support\Facades\Hash;
 

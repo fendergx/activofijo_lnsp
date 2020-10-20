@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Persona_reponsable;
-use App\Cliente_preparaduria;
+use App\Models\Persona_reponsable;
+use App\Models\Cliente_preparaduria;
 use Validator;
 use Response;
 

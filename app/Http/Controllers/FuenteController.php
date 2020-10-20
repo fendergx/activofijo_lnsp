@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Fuente_activo;
+use App\Models\Fuente_activo;
 use Validator;
 use Response;
 

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Area;
-use App\Coordinacion;
+use App\Models\Area;
+use App\Models\Coordinacion;
 use Validator;
 use Response;
 

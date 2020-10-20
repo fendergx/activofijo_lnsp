@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Response;
 
-use App\Ubicacion_af;
+use App\Models\Ubicacion_af;
 
 class UbicacionController extends Controller
 {

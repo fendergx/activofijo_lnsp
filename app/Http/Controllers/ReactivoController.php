@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Reactivo;
+use App\Models\Reactivo;
 use Validator;
 use Response;
 

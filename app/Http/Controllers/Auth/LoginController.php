@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Auth;
 use AuthenticatesUsers;
-use App\User;
+use App\Models\User;
 
 //para recibir los datos como request, nueva forma
 use Illuminate\Http\Request;

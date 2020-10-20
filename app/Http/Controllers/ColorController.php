@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Color_af;
+use App\Models\Color_af;
 use Validator;
 use Response;
 
