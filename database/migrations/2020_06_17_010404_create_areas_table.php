@@ -15,7 +15,7 @@ class CreateAreasTable extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->bigIncrements('id_area');
-            $table->string('nombre_area')->unique();
+            $table->string('nombre_area');
             //llave foranea
             $table->unsignedBigInteger('id_coord');
             $table->foreign('id_coord')->references('id_coord')->on('coordinaciones');
