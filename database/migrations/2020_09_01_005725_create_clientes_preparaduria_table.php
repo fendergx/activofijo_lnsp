@@ -16,7 +16,7 @@ class CreateClientesPreparaduriaTable extends Migration
         Schema::create('clientes_preparaduria', function (Blueprint $table) {
             $table->bigIncrements('id_cliente');
             $table->string('nombre_cliente')->unique();
-            $table->unsignedBigInteger('id_dep')->nullable();
+            $table->unsignedBigInteger('id_dep');
             $table->foreign('id_dep')->references('id_dep')->on('departamentos');
             $table->timestamps();
         });
