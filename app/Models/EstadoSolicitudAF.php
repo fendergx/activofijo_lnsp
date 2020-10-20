@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Region extends Model
+class EstadoSolicitudAF extends Model
 {
-	protected $table='regiones';
-	protected $primaryKey='id_region';
+	protected $table='estado_solicitudes_af';
+	protected $primaryKey='id_estado_sol';
 
-	protected $fillable = ['region'];
+	protected $fillable = ['estado_sol'];
 
     //se usa para cuando la tabla no tiene TimeStamp (created_at updated_at)
 	public $timestamps = false;

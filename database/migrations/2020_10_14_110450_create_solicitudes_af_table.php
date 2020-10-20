@@ -20,6 +20,8 @@ class CreateSolicitudesAfTable extends Migration
             //llaves foráneas
             $table->unsignedBigInteger('id_estado_sol');
             $table->foreign('id_estado_sol')->references('id_estado_sol')->on('estado_solicitudes_af');
+            $table->unsignedBigInteger('id_tipo_rep');
+            $table->foreign('id_tipo_rep')->references('id_tipo_rep')->on('tipo_reportes');
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
 

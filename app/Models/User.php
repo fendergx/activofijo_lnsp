@@ -25,7 +25,7 @@ class User extends Authenticatable
     protected $primaryKey = 'id_usuario';
 
     protected $fillable = [
-        'nombre_usuario', 'password', 'nombres','apellidos','id_rol','id_coord','id_area'
+        'nombre_usuario', 'password', 'nombres','apellidos','cargo','id_rol','id_coord','id_area'
     ];
 
     public function rol(){
