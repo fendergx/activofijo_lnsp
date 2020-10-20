@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\EncryptAES;
 
 //para hash del password
@@ -22,11 +22,25 @@ class UsuariosSeeder extends Seeder
         	'nombres' => 'Karen Elvira',
         	'apellidos' => 'Peñate Aviles',
         	'id_rol' => '1',
-        	'id_coord' => null,
-        	'id_area' => null,
+            
         ]);
 
-        /*User::create(['nombre_usuario' => 'omar.orellana',
+        User::create(['nombre_usuario' => 'fernando.aguilar',
+            'password' => Hash::make('jose.com'),
+            'nombres' => 'José Fernando',
+            'apellidos' => 'Aguilar Rodríguez',
+            'id_rol' => '1',
+
+        ]);
+
+        User::create(['nombre_usuario' => 'martell.xiomara',
+            'password' => Hash::make('martell.xiomara'),
+            'nombres' => 'Xiomara Cecilia',
+            'apellidos' => 'Martell',
+            'id_rol' => '2',
+        ]);
+
+        User::create(['nombre_usuario' => 'omar.orellana',
         	'password' => Hash::make('omar'),
         	'nombres' => 'Omar Enrique',
         	'apellidos' => 'Cruz Orellana',
@@ -50,12 +64,12 @@ class UsuariosSeeder extends Seeder
 
         User::create([
             'nombre_usuario' => 'manuel.chacon',
-        	'password' => Hash::make('manuel'),
-        	'nombres' => 'José Manuel',
-        	'apellidos' => 'Chacón',
-        	'id_rol' => '5',
-        	'id_coord' => '1',
-        	'id_area' => '1',
+            'password' => Hash::make('manuel'),
+            'nombres' => 'José Manuel',
+            'apellidos' => 'Chacón',
+            'id_rol' => '5',
+            'id_coord' => '1',
+            'id_area' => '1',
         ]);
         
 
@@ -63,9 +77,10 @@ class UsuariosSeeder extends Seeder
         	'password' => Hash::make('francisco'),
         	'nombres' => 'Francisco',
         	'apellidos' => 'Gómez',
-        	'id_rol' => '6',
-        	'id_coord' => '1',
-        	'id_area' => '1',
-        ]);*/
+            'cargo' => 'tester',
+            'id_rol' => '6',
+            'id_coord' => '1',
+            'id_area' => '1',
+        ]);
     }
 }

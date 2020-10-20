@@ -24,6 +24,8 @@ class CreateSolicitudesAfTable extends Migration
             $table->foreign('id_tipo_rep')->references('id_tipo_rep')->on('tipo_reportes');
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id_usuario')->on('usuarios');
+            $table->unsignedBigInteger('id_af');
+            $table->foreign('id_af')->references('id_af')->on('activos_fijos');
 
             //creado y actualizado a
             $table->timestamps();
