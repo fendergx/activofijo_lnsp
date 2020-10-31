@@ -41,7 +41,7 @@ class ActivoFijo extends Model
         return $this->belongsTo(Fuente_activo::class, 'id_fuente','id_fuente');
     }
 
-    public function persona_responsable(){
+    public function responsable(){
         return $this->belongsTo(User::class, 'persona_responsable','id_usuario');
     }
 	
