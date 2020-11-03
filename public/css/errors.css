@@ -20,18 +20,20 @@ body{
 }
 
 .fof{
-	  display: table-cell;
-	  vertical-align: middle;
+ display: table-cell;
+ vertical-align: middle;
+ background: rgb(228,228,240);
+ background: radial-gradient(circle, rgba(228,228,240,1) 35%, rgba(95,116,159,1) 98%);
 }
 
 .fof h1{
-	  font-size: 50px;
-	  display: inline-block;
-	  padding-right: 12px;
-	  animation: type .5s alternate infinite;
+ font-size: 50px;
+ display: inline-block;
+ padding-right: 12px;
+ animation: type .5s alternate infinite;
 }
 
 @keyframes type{
-	  from{box-shadow: inset -3px 0px 0px #888;}
-	  to{box-shadow: inset -3px 0px 0px transparent;}
+ from{box-shadow: inset -3px 0px 0px #888;}
+ to{box-shadow: inset -3px 0px 0px transparent;}
 }

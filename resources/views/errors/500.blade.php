@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie-edge">
-	<title>Error 500</title>
-	<link rel="stylesheet" href="{{ asset('css/error-javier.css') }}">
-</head>
-<body>
-	<div class="container">			
-			<h2>Oops! Algo salió mal... :(</h2>
-			<h1>500</h1>
-			<p>Se produjo un error interno de parte del servidor. Su solicitud no se pudo completar.</p>
-			<a href="{{route('inicio.admin')}}">REGRESAR A PÁGINA PRINCIPAL</a>	
-	</div>
-</body>
-</html>
+@extends('errors.base')
+@section('title') Error 500! @endsection
+
+@section('h1')
+<i class="fas fa-sad"></i> Error 500! <br>
+@endsection
+@section('h2')
+Se produjo un error interno de parte del servidor. <br>Su solicitud no se pudo completar.
+@endsection
+@section('texto')
+Si el problema persiste, contacte al administrador del sistema.
+@endsection
