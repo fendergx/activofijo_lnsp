@@ -30,6 +30,8 @@ class ActivoFijoSeeder extends Seeder
         	'id_color' => '1',
         	'id_fuente' => '1',
         	'persona_responsable' => '1',
+            'id_coord' => '1',
+            'id_area' => '1',
         ]);
 
         ActivoFijo::create([
@@ -47,6 +49,8 @@ class ActivoFijoSeeder extends Seeder
         	'id_color' => '2',
         	'id_fuente' => '2',
         	'persona_responsable' => '2',
+            'id_coord' => '1',
+            'id_area' => '2',
         ]);
     }
 }

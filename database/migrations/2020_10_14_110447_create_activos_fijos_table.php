@@ -28,6 +28,13 @@ class CreateActivosFijosTable extends Migration
             $table->boolean('export_af')->default(0);
 
             //llaves foráneas
+
+            $table->unsignedBigInteger('id_coord');
+            $table->foreign('id_coord')->references('id_coord')->on('coordinaciones');
+
+            $table->unsignedBigInteger('id_area');
+            $table->foreign('id_area')->references('id_area')->on('areas');
+
             $table->unsignedBigInteger('id_ubicacion');
             $table->foreign('id_ubicacion')->references('id_ubicacion')->on('ubicaciones_af');
 
