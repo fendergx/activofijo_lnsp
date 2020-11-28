@@ -40,7 +40,7 @@ Route::get('success','usuarioController@sucess')->name('usuario.success');
 Route::post('usuario','usuarioController@store')->name('usuario.store');
 
 //inicio
-Route::get('admin', 'HomeController@admin')->name('inicio.admin');
+Route::get('inicio', 'HomeController@admin')->name('inicio.admin');
 Route::get('/', 'Auth\LoginController@showLoginForm')->name('inicio');
 
 //areas

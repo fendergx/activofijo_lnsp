@@ -16,9 +16,12 @@
 @endsection
 @section('contenido')
 @auth 
-<h1 class="text-center text-light">Sesión iniciada</h1>
-<h2 class="text-center"><a class="btn btn-outline-light my-2 my-sm-0" href="{{route('inicio.admin')}}">Inicio</a></h2>
+<h1 class="text-center text-shadow text-light">Sesión iniciada</h1><br>
+<h3 class="text-center text-shadow text-light">Redireccionando...</h3>
 
+<script type="text/javascript">
+  window.location.href = "{{route('inicio.admin')}}";
+</script>
 @endauth
 @guest
 @section('container')
