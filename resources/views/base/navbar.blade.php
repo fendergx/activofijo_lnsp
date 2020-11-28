@@ -4,7 +4,7 @@
         <a href="{{route('inicio.admin')}}" class="navbar-brand d-flex align-items-center"><i class="fa fa-home" aria-hidden="true">&nbsp;</i> 
           <strong>Inicio</strong>
         </a>
-        <img class="navbar-brand" src="http://www.salud.gob.sv/archivos/pdf/plantillas_institucionales/logos-minsal-062019/logos_minsal_062019-White_transparente_2536x1288.png" height="40px" width="65px" alt="logo">
+        <img class="navbar-brand" src="{{asset('img/logoBlanco.png')}}" height="40px" width="65px" alt="logo">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

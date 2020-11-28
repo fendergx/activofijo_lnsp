@@ -31,8 +31,8 @@
     {{ csrf_field() }}
     <div class="text-center mb-4">
       <h1 class="h1 mb-3 font-weight-normal text-shadow"><b>SIL</b></h1>
-      <img class="mb-4" src="http://www.salud.gob.sv/archivos/pdf/plantillas_institucionales/logos-minsal-062019/header_transparente-MINSAL-062019_membrete.png" alt="" width="300" height="150">
-      <h1 class="h3 mb-3 font-weight-normal text-shadow"><b>Iniciar sesión</b></h1>
+      <img class="mb-4" src="{{asset ('img/logo.png')}}" alt="Logo Minsal" width="300" height="150">
+      <h1 class="h3 mb-3 font-weight-normal text-shadow"><b><i class="fas fa-user"></i> Iniciar sesión</b></h1>
     </div>
 
     <div class="form-label-group {{ $errors->has('nombre_usuario') ? 'has-error': '' }}">
