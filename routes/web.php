@@ -96,3 +96,9 @@ Route::get('persona', 'PersonaRespController@index')->name('persona.index');
 Route::post('persona', 'PersonaRespController@store')->name('persona.store');
 Route::put('persona/{id}','PersonaRespController@update')->name('persona.update');
 Route::delete('persona/{id}','PersonaRespController@destroy')->name('persona.delete');
+
+//formularios
+Route::get('fomulario/a', 'FormularioA_Controller@index')->name('form.a');
+
+
+//reportes

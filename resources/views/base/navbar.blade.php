@@ -40,6 +40,15 @@
                 <a class="dropdown-item" href="{{ route('ubicacion.index') }}">Ubicaciones</a>
               </div>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Reportes</a>
+              <div class="dropdown-menu dropdown-menu-right animate slideIn shadow" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="{{ route('form.a') }}">Formulario A</a>
+                <a class="dropdown-item" href="#">Formulario B</a>
+                <a class="dropdown-item" href="#">Formulario C</a>
+                <a class="dropdown-item" href="#">Formulario D</a>
+              </div>
+            </li>
             <li class="nav-item">
               <!--<a class="nav-link disabled" href="#">LinkDeshabilitado</a>-->
             </li>
