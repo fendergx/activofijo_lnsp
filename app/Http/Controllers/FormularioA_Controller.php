@@ -8,6 +8,6 @@ class FormularioA_Controller extends Controller
 {
     //
     public function index(){
-    	return "A";
+    	return view('formularios.formulario_a');
     }
 }

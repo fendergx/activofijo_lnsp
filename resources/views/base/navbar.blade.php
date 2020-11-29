@@ -63,10 +63,10 @@
                 {{head(explode(' ', trim(Auth::user()->nombres))) }}  {{head(explode(' ', trim(Auth::user()->apellidos))) }} <span class="far fa-user"></span> </a>
 
                 <div class="dropdown-menu dropdown-menu-right animate slideIn shadow" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('usuario.perfil') }}">
-                    Perfil &nbsp;<span class="badge badge-success">Nuevo!</span>
+                  <a class="dropdown-item text-right" href="{{ route('usuario.perfil') }}">
+                    Mi perfil &nbsp;<i class="fas fa-info"></i>
                   </a>
-                  <a class="dropdown-item" href="{{ route('logout') }}"
+                  <a class="dropdown-item text-right" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
                   Cerrar sesión <i class="fas fa-user-lock" aria-hidden="true"></i>
