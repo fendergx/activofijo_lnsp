@@ -98,7 +98,7 @@ Route::put('persona/{id}','PersonaRespController@update')->name('persona.update'
 Route::delete('persona/{id}','PersonaRespController@destroy')->name('persona.delete');
 
 //formularios
-Route::get('fomulario/a', 'FormularioA_Controller@index')->name('form.a');
+Route::get('formularios/a', 'FormularioA_Controller@formulario')->name('form.a');
 
 
 //reportes
