@@ -19,7 +19,7 @@ class ActivoFijo extends Model
 
 	protected $fillable = [
 		'codigo_af','nombre_af','marca_af','modelo_af','serie_af','fecha_adq_af',
-		'valor_adq_af','valor_actual_af','descripcion_af','desecha_af','export_af', 'id_coord','id_coord',
+		'valor_adq_af','valor_actual_af','descripcion_af','desecha_af','export_af', 'id_coord','id_area',
 		'id_ubicacion','id_estado','id_color','id_fuente','persona_responsable'
 	];
 

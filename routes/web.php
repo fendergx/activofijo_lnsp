@@ -97,8 +97,15 @@ Route::post('persona', 'PersonaRespController@store')->name('persona.store');
 Route::put('persona/{id}','PersonaRespController@update')->name('persona.update');
 Route::delete('persona/{id}','PersonaRespController@destroy')->name('persona.delete');
 
+//CRUD DE ACTIVO FIJO
+Route::get('ActivoFijo', 'ActivoFijoController@index')->name('ActivoFijo.index');
+Route::get('ActivoFijo/Crear', 'ActivoFijoController@create')->name('ActivoFijo.create');
+Route::post('ActivoFijo', 'ActivoFijoController@store')->name('ActivoFijo.store');
+
 //formularios
-Route::get('fomulario/a', 'FormularioA_Controller@index')->name('form.a');
-
-
+//Route::get('fomulario/a', 'FormularioA_Controller@index')->name('form.a');
+Route::get('formulario/a','FormularioA_Controller@index')->name('form.a');
+Route::post('formulario/a','FormularioA_Controller@store')->name('form.a.store');
+Route::get('areass','FormularioA_Controller@getAreass');
+//Route::put('formulario/a/{id}','FormularioAController@opcion')->name('formulario.a.opcion');
 //reportes

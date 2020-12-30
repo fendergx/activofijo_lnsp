@@ -11,3 +11,4 @@
 <script type="text/javascript" src="{{ asset('toastr/configtoast.js') }}"></script>
 <!-- configuraciones propias del equipo-->
 <script type="text/javascript" src="{{ asset('js/propio.js') }}"></script>
+@section('extrajsfooter')  @show
