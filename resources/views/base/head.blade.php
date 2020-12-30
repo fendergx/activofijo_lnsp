@@ -12,3 +12,6 @@
 <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="{{asset('css/fontawesome.all.min.css')}}">
+
+<!-- boton de subir -->
+<link rel="stylesheet" href="{{asset('css/boton-subir.css')}}">

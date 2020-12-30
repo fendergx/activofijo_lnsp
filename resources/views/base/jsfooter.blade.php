@@ -9,6 +9,9 @@
 <script type="text/javascript" src="{{ asset('toastr/toastr.min.js') }}"></script>
 <!-- config de toast-->
 <script type="text/javascript" src="{{ asset('toastr/configtoast.js') }}"></script>
+
+<!-- config de boton de subir-->
+<script type="text/javascript" src="{{ asset('js/stand/boton-subir.js') }}"></script>
 <!-- configuraciones propias del equipo-->
 <script type="text/javascript" src="{{ asset('js/propio.js') }}"></script>
 @section('extrajsfooter')  @show
