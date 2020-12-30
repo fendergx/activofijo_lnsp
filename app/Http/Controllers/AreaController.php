@@ -29,15 +29,26 @@ class AreaController extends Controller
         'nombre_area' => 'required|min:2|max:128|regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ .,# ]+$/i',
         'id_coord' =>'required',];
 
-    public function index()
-    {
-        $areas = Area::all();
-        $coordinaciones = Coordinacion::all();
-        return view('area.index', ['areas' => $areas,'coordinaciones' => $coordinaciones]);
-    }
+        public function index()
+        {
+            $areas = Area::all();
+            $coordinaciones = Coordinacion::all();
+            return view('area.index', ['areas' => $areas,'coordinaciones' => $coordinaciones]);
+        }
 
     //función para obtener las áreas según la coordinación escogida
-    public function getAreas(Request $request){
+        public function getAreas(Request $request){
+            $dependent = $request->get('dependent');
+            $data = Area::where($request->select, $request->value)->get();
+            $output = '<option value="" selected>Seleccionar Área</option>';
+            foreach($data as $row){
+                $output .= '<option value="'.$row->id_area.'">'.$row->nombre_area.'</option>';
+            }
+            echo $output;
+        }
+
+    //copia original de función para obtener las áreas según la coordinación escogida
+    /*public function getAreas(Request $request){
         $dependent = $request->get('dependent');
         $data = Area::where($request->select, $request->value)->get();
         $output = '<option value="" selected>Seleccionar Área</option>';
@@ -45,7 +56,7 @@ class AreaController extends Controller
             $output .= '<option value="'.$row->id_area.'">'.$row->$dependent.'</option>';
         }
         echo $output;
-    }
+    }*/
 
 
 

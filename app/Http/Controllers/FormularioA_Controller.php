@@ -4,10 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Coordinacion;
+use App\Models\ClaseMovimiento;
+use App\Models\ActivoFijo;
+
 class FormularioA_Controller extends Controller
 {
     //
-    public function index(){
-    	return view('formularios.formulario_a');
+    public function formulario(){
+    	$coordinaciones = Coordinacion::all();
+    	$clases = ClaseMovimiento::all();
+    	return view('formularios.formulario_a',[
+    		'coordinaciones'=>$coordinaciones,
+    		'clases'=>$clases
+    	]);
     }
 }
