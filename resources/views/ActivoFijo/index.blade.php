@@ -15,7 +15,7 @@ Activo Fijo
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<ul>
-			<a class="btn btn-primary" href="{{route('ActivoFijo.create')}}"><span class="fas fa-plus">&nbsp;</span>Registrar nuevo Activo Fijo</a>
+			<a class="btn btn-primary" href="{{route('activofijo.create')}}"><span class="fas fa-plus">&nbsp;</span>Registrar nuevo Activo Fijo</a>
 		</ul>
 	</div>
 	<div class="panel-body">
@@ -56,7 +56,7 @@ Activo Fijo
 					},
 					//scrollY: 350, //muestra 6 registros
 					//paging: true, //paginación habilitada
-					"serverSide":true, 
+					"serverSide":false, 
 					"ajax": "{{ url('api/activos') }}",
 					"columns": [
 					//para ocultar https://datatables.net/examples/basic_init/hidden_columns.html

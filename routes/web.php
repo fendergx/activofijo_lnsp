@@ -98,9 +98,9 @@ Route::put('persona/{id}','PersonaRespController@update')->name('persona.update'
 Route::delete('persona/{id}','PersonaRespController@destroy')->name('persona.delete');
 
 //CRUD DE ACTIVO FIJO
-Route::get('ActivoFijo', 'ActivoFijoController@index')->name('ActivoFijo.index');
-Route::get('ActivoFijo/Crear', 'ActivoFijoController@create')->name('ActivoFijo.create');
-Route::post('ActivoFijo', 'ActivoFijoController@store')->name('ActivoFijo.store');
+Route::get('af', 'ActivoFijoController@index')->name('activofijo.index');
+Route::get('af/agregar', 'ActivoFijoController@create')->name('activofijo.create');
+Route::post('af', 'ActivoFijoController@store')->name('activofijo.store');
 
 
 //formularios
