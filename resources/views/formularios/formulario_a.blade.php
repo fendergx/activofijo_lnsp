@@ -1,8 +1,17 @@
 @extends('base.base')
 @section('title')
-Fuentes de Activo Fijo
+Formulario A
+@endsection
+@section('extraHead')
+<link rel="stylesheet" href="{{asset('css/date/flatpickr.css')}}">
+<link rel="stylesheet" href="{{asset('css/date/temas/dark.css')}}">
 @endsection
 @section('extraJS')
+<!-- para fecha-->
+<script type="text/javascript" src="{{asset('js/date/flatpickr.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/date/lang-es.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/date/flatpickr-config.js')}}"></script>
+<!-- form -->
 <script type="text/javascript" src="{{asset('js/form/a.js')}}"></script>
 @endsection
 @section('contenido')
@@ -17,7 +26,7 @@ Fuentes de Activo Fijo
 		<div class="form-group row">
 			<label for="name" class="col-md-4 col-form-label text-md-right dynamic"><b>Coordinación: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select id="id_coord" name="id_coord" class="form-control dynamic" data-dependent="nombre_area" autofocus>
+				<select id="id_coord" name="id_coord" class="form-control dynamic" data-dependent="nombre_area" required autofocus>
 					<option value="">Seleccione una coordinación</option>
 					@foreach ($coordinaciones as $coordinacion)
 					<option value="{{ $coordinacion->id_coord }}"> {{ $coordinacion->nombre_coord }}</option>  
@@ -29,8 +38,8 @@ Fuentes de Activo Fijo
 		<div class="form-group row">
 			<label for="nombre_area" class="col-md-4 col-form-label text-md-right"><b>Dependencia que entrega: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select name="nombre_area" id="nombre_area" class="form-control">
-					<option value="">Seleccionar Área</option>
+				<select name="nombre_area" id="nombre_area" class="form-control" required>
+					<option value="" selected disabled>Seleccionar Área</option>
 				</select>
 			</div>
 		</div>
@@ -38,8 +47,8 @@ Fuentes de Activo Fijo
 		<div class="form-group row">
 			<label for="nombre_area_2" class="col-md-4 col-form-label text-md-right"><b>Dependencia que recibe: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select name="nombre_area_2" id="nombre_area_2" class="form-control">
-					<option value="">Seleccionar Área</option>
+				<select name="nombre_area_2" id="nombre_area_2" class="form-control" required>
+					<option value="" selected disabled>Seleccionar Área</option>
 				</select>
 			</div>
 		</div>
@@ -47,7 +56,7 @@ Fuentes de Activo Fijo
 		<div class="form-group row">
 			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Fecha: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<input id="nombres" type="date" class="form-control" name="nombres" value="{{ old('nombres') }}" required autocomplete="name" title="Solo puede ingresar letras">
+				<input id="fecha" type="text" class="form-control fecha-format" name="fecha" value="{{ old('fecha') }}" required>
 
 			</div>
 		</div>
@@ -55,7 +64,7 @@ Fuentes de Activo Fijo
 		<div class="form-group row">
 			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Clase de movimiento: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select required class="form-control" id="id_clase" name="id_clase">
+				<select class="form-control" id="id_clase" name="id_clase" required>
 					<option selected disabled="true" value="">Seleccione tipo de movimiento</option>
 					@foreach ($clases as $clase)
 					<option value="{{ $clase->id_clase_mov }}"> {{ $clase->clase_movimiento }}</option>  
@@ -67,7 +76,7 @@ Fuentes de Activo Fijo
 		<div class="form-group row">
 			<label for="id_activo" class="col-md-4 col-form-label text-md-right"><b>Activo Fijo: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select required class="form-control" id="id_activo" name="id_activo">
+				<select class="form-control" id="id_activo" name="id_activo" required>
 					<option selected disabled="true" value="">Seleccionar Activo Fijo</option>
 				</select>
 			</div>

@@ -40,7 +40,7 @@ class AreaController extends Controller
         public function getAreas(Request $request){
             $dependent = $request->get('dependent');
             $data = Area::where($request->select, $request->value)->get();
-            $output = '<option value="" selected>Seleccionar Área</option>';
+            $output = '<option value="" selected disabled>Seleccionar Área</option>';
             foreach($data as $row){
                 $output .= '<option value="'.$row->id_area.'">'.$row->nombre_area.'</option>';
             }
