@@ -12,6 +12,8 @@
 
 <!-- config de boton de subir-->
 <script type="text/javascript" src="{{ asset('js/stand/boton-subir.js') }}"></script>
+<!-- Tooltip-->
+<script type="text/javascript" src="{{ asset('js/stand/tooltip.js') }}"></script>
 <!-- configuraciones propias del equipo-->
 <script type="text/javascript" src="{{ asset('js/propio.js') }}"></script>
 @section('extrajsfooter')  @show
