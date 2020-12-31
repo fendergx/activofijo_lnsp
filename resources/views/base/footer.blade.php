@@ -1,5 +1,5 @@
 <!-- botón subir (top)-->
-<a href="#" title="subir" id="js_up" class="boton-subir btn btn-outline-secondary">
+<a href="#" data-toggle="tooltip" data-placement="left" title="subir" id="js_up" class="boton-subir btn btn-outline-secondary">
 	<i class="fas fa-arrow-up"></i>
 </a>
 <footer class="footer">
