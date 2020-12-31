@@ -32,15 +32,21 @@ $(document).ready(function() {
     });
 });
 
-
-function validateMyForm(){
-    var pass = $("#password").val();
-    var confirm = $("#password-confirm").val();
-    if(pass===confirm){
-            //nada  
-        }else{
-            toastr.warning('Las contraseñas no coinciden', {timeOut: 5000});
-            return false;   
+//para traer los activos de un area
+$(document).ready(function() {
+    $('.dynamic2').change(function(){  
+        if($(this).val()!= ''){
+            var value = $(this).val();
+            var dependent = $(this).data('dependent');
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+                url: "../activofijo/fetch",
+                method:"POST",
+                data:{value:value, _token:_token},
+                success:function(result){
+                    $('#'+dependent).html(result);
+                }
+            })
         }
-        
-    };
+    });
+});

@@ -46,6 +46,7 @@ Route::get('/', 'Auth\LoginController@showLoginForm')->name('inicio');
 //areas
 //Route:get('areas/{id}','usuarioController@areas')->name('usuario.area');
 Route::post('getareas/fetch', 'AreaController@getAreas');
+Route::post('activofijo/fetch', 'ActivoFijoController@getTitulosActivos');
 
 //CRUD usuarios
 Route::get('usuario', 'usuarioController@lista')->name('usuario.lista');
@@ -110,6 +111,6 @@ Route::get('formularios/a', 'FormularioA_Controller@formulario')->name('form.a')
 //Route::get('fomulario/a', 'FormularioA_Controller@index')->name('form.a');
 Route::get('formulario/a','FormularioA_Controller@formulario')->name('form.a');
 Route::post('formulario/a','FormularioA_Controller@store')->name('form.a.store');
-Route::get('areass','FormularioA_Controller@getAreass');
-//Route::put('formulario/a/{id}','FormularioAController@opcion')->name('formulario.a.opcion');
+
+
 //reportes

@@ -21,13 +21,13 @@ Formulario A
 
 
 <div class="card-body">
-	<form method="POST" action="#" onsubmit="return validateMyForm(this);">
+	<form method="POST" action="#">
 		@csrf
 		<div class="form-group row">
-			<label for="name" class="col-md-4 col-form-label text-md-right dynamic"><b>Coordinación: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
+			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Coordinación: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
 				<select id="id_coord" name="id_coord" class="form-control dynamic" data-dependent="nombre_area" required autofocus>
-					<option value="">Seleccione una coordinación</option>
+					<option value="" disabled selected>Seleccione una coordinación</option>
 					@foreach ($coordinaciones as $coordinacion)
 					<option value="{{ $coordinacion->id_coord }}"> {{ $coordinacion->nombre_coord }}</option>  
 					@endforeach
@@ -38,7 +38,7 @@ Formulario A
 		<div class="form-group row">
 			<label for="nombre_area" class="col-md-4 col-form-label text-md-right"><b>Dependencia que entrega: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select name="nombre_area" id="nombre_area" class="form-control" required>
+				<select name="nombre_area" id="nombre_area" class="form-control dynamic2" data-dependent="id_activo" required>
 					<option value="" selected disabled>Seleccionar Área</option>
 				</select>
 			</div>
@@ -76,7 +76,7 @@ Formulario A
 		<div class="form-group row">
 			<label for="id_activo" class="col-md-4 col-form-label text-md-right"><b>Activo Fijo: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select class="form-control" id="id_activo" name="id_activo" required>
+				<select class="form-control" id="id_activo" name="id_activo" data-toggle="tooltip" data-placement="top" title="Codigo AF - Nombre (# Serie)" data-required>
 					<option selected disabled="true" value="">Seleccionar Activo Fijo</option>
 				</select>
 			</div>
@@ -84,6 +84,9 @@ Formulario A
 
 		<div class="form-group row mb-0">
 			<div class="col-md-6 offset-md-4">
+				<a href="{{route('inicio.admin')}}" class="btn btn-secondary">
+					Cancelar
+				</a>
 				<button type="submit" class="btn btn-primary">
 					Generar Reporte
 				</button>

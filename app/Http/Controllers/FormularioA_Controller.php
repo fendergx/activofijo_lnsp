@@ -19,4 +19,8 @@ class FormularioA_Controller extends Controller
     		'clases'=>$clases
     	]);
     }
+
+    public function store(){
+    	return back();
+    }
 }
