@@ -30,19 +30,19 @@ class ActivoFijoController extends Controller
         $this->middleware('auth');
     } 
     //función para obtener las áreas según la coordinación escogida
-	public function getAreas(Request $request){
-		$dependent = $request->get('dependent');
-		$data = Area::where($request->select, $request->value)->get();
-		$output = '<option value="" selected>Seleccionar Área</option>';
-		foreach($data as $row){
-			$output .= '<option value="'.$row->id_area.'">'.$row->nombre_area.'</option>';
-		}
-		echo $output;
-	}
-    public function index()
-    {
-        return view('ActivoFijo.index');
-    }  
+    public function getAreas(Request $request){
+      $dependent = $request->get('dependent');
+      $data = Area::where($request->select, $request->value)->get();
+      $output = '<option value="" selected>Seleccionar Área</option>';
+      foreach($data as $row){
+       $output .= '<option value="'.$row->id_area.'">'.$row->nombre_area.'</option>';
+   }
+   echo $output;
+}
+public function index()
+{
+    return view('ActivoFijo.index');
+}  
 
     /** 
      * Show the form for creating a new resource.
@@ -74,30 +74,31 @@ class ActivoFijoController extends Controller
      */
     public function store(Request $request)
     {
-            $Activo = new ActivoFijo();
-            $Activo->codigo_af = $request->codigoAF;
-            $Activo->nombre_af = $request->nombreAF;
-            $Activo->marca_af = $request->marcaAF;
-            $Activo->modelo_af = $request->modeloAF;
-            $Activo->serie_af = $request->serieAF;
-            $Activo->fecha_adq_af = $request->fechaAdqAF;
-            $Activo->valor_adq_af = $request->valorAdqAF;
-            $Activo->valor_actual_af = $request->valorActAF;
-            $Activo->descripcion_af = $request->descripcionAF;
-            $Activo->desecha_af = false;
-            $Activo->export_af = false;
-            $Activo->id_coord = $request->coordinacionAF;
-            $Activo->id_area = $request->areaAF;
-            $Activo->id_ubicacion = $request->ubicacionAF;
-            $Activo->id_estado = 1;
-            $Activo->id_color = $request->colorAF;
-            $Activo->id_fuente = $request->fuenteAF;
-            $Activo->persona_responsable = $request->encargadoAF;
-            $Activo->save();
+
+        $Activo = new ActivoFijo();
+        $Activo->codigo_af = $request->codigoAF;
+        $Activo->nombre_af = $request->nombreAF;
+        $Activo->marca_af = $request->marcaAF;
+        $Activo->modelo_af = $request->modeloAF;
+        $Activo->serie_af = $request->serieAF;
+        $Activo->fecha_adq_af = $request->fechaAdqAF;
+        $Activo->valor_adq_af = $request->valorAdqAF;
+        $Activo->valor_actual_af = $request->valorActAF;
+        $Activo->descripcion_af = $request->descripcionAF;
+        $Activo->desecha_af = false;
+        $Activo->export_af = false;
+        $Activo->id_coord = $request->coordinacionAF;
+        $Activo->id_area = $request->areaAF;
+        $Activo->id_ubicacion = $request->ubicacionAF;
+        $Activo->id_estado = 1;
+        $Activo->id_color = $request->colorAF;
+        $Activo->id_fuente = $request->fuenteAF;
+        $Activo->persona_responsable = $request->encargadoAF;
+        $Activo->save();
             //return $Activo;
             //return response()->json($Activo);
-            return View('ActivoFijo.index'); 
-
+        return View('ActivoFijo.index'); 
+        //return back()->withInput();
     }
 
 

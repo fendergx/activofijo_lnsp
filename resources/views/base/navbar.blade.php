@@ -34,6 +34,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Activo Fijo</a>
               <div class="dropdown-menu dropdown-menu-right animate slideIn shadow" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="{{ route('activofijo.index') }}">Activo Fijo</a>
                 <a class="dropdown-item" href="{{ route('fuente.index') }}">Fuentes proveedoras</a>
                 <a class="dropdown-item" href="{{ route('color.index') }}">Colores</a>
                 <a class="dropdown-item" href="{{ route('estado.index') }}">Estados de A.F.</a>
