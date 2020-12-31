@@ -9,6 +9,4 @@ Inicio
 <img class="img-fluid rounded mx-auto d-block" src="http://www.salud.gob.sv/archivos/pdf/plantillas_institucionales/logos-minsal-062019/header_transparente-MINSAL-062019_membrete.png" width="500px" height="232px" alt="logo"><br>
 <h2 class="text-center text-shadow">Sistema Integrado del <br> Laboratorio Nacional de Salud Pública</h2>
 
-
 @endsection
-
