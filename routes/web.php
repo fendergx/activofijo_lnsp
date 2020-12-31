@@ -106,9 +106,6 @@ Route::post('af', 'ActivoFijoController@store')->name('activofijo.store');
 
 //formularios
 
-Route::get('formularios/a', 'FormularioA_Controller@formulario')->name('form.a');
-
-//Route::get('fomulario/a', 'FormularioA_Controller@index')->name('form.a');
 Route::get('formulario/a','FormularioA_Controller@formulario')->name('form.a');
 Route::post('formulario/a','FormularioA_Controller@store')->name('form.a.store');
 
