@@ -50,3 +50,19 @@ $(document).ready(function() {
         }
     });
 });
+
+
+//para mostrar u ocultar detalles de traslado
+$(document).ready(function() {
+    $('#id_clase').change(function(){  
+        if($(this).val()!= ''){
+            if($(this).val()== '3'){
+                $("#form-especificar").show(400);
+                $('#especificar').attr('required', 'required');
+            }else{
+                $("#form-especificar").hide(400);
+                $('#especificar').removeAttr('required');
+            }
+        }
+    });
+});

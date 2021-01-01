@@ -73,10 +73,18 @@ Formulario A
 			</div>
 		</div>
 
+		<div class="form-group row" id="form-especificar" style="display: none;">
+			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Especificar: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
+			<div class="col-md-6">
+				<textarea id="especificar" rows="2" class="form-control" name="especificar" value="{{ old('especificar') }}"></textarea>
+
+			</div>
+		</div>
+
 		<div class="form-group row">
 			<label for="id_activo" class="col-md-4 col-form-label text-md-right"><b>Activo Fijo: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
-				<select class="form-control" id="id_activo" name="id_activo" data-toggle="tooltip" data-placement="top" title="Codigo AF - Nombre (# Serie)" data-required>
+				<select class="form-control" id="id_activo" name="id_activo" data-toggle="tooltip" data-placement="top" title="Codigo AF - Nombre (# Serie)" required>
 					<option selected disabled="true" value="">Seleccionar Activo Fijo</option>
 				</select>
 			</div>
