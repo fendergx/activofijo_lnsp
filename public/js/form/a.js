@@ -51,7 +51,6 @@ $(document).ready(function() {
     });
 });
 
-
 //para mostrar u ocultar detalles de traslado
 $(document).ready(function() {
     $('#id_clase').change(function(){  
@@ -63,6 +62,16 @@ $(document).ready(function() {
                 $("#form-especificar").hide(400);
                 $('#especificar').removeAttr('required');
             }
+        }
+    });
+});
+
+//para prevención de escoger la misma área
+$(function(){
+    $('.submit').on('submit', function(event){
+        if(nombre_area.value === nombre_area_2.value){
+            toastr.warning("No se puede enviar activos de un area a sí misma","Error")
+            event.preventDefault();
         }
     });
 });

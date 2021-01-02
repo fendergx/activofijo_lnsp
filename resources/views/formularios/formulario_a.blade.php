@@ -21,7 +21,7 @@ Formulario A
 
 
 <div class="card-body">
-	<form method="POST" action="#">
+	<form method="POST" action="#" class="submit">
 		@csrf
 		<div class="form-group row">
 			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Coordinación: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
