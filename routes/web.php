@@ -113,7 +113,16 @@ Route::post('formulario/b','FormularioB_Controller@store')->name('form.b.store')
 Route::get('formulario/c','FormularioC_Controller@formulario')->name('form.c');
 Route::post('formulario/c','FormularioC_Controller@store')->name('form.c.store');
 Route::get('formulario/d','FormularioD_Controller@formulario')->name('form.d');
-Route::post('formulario/bd','FormularioD_Controller@store')->name('form.d.store');
+Route::post('formulario/d','FormularioD_Controller@store')->name('form.d.store');
+
+Route::get('formulario/acta','Formulario_ActaEntrega_Controller@formulario')->name('acta');
+Route::post('formulario/acta','Formulario_ActaEntrega_Controller@store')->name('acta.store');
+
+Route::get('formulario/asignacion','Formulario_Asignacion_Controller@formulario')->name('asignacion');
+Route::post('formulario/asignacion','Formulario_Asignacion_Controller@store')->name('asignacion.store');
+
+Route::get('formulario/salida','Formulario_OrdenSalida_Controller@formulario')->name('salida');
+Route::post('formulario/salida','Formulario_OrdenSalida_Controller@store')->name('salida.store');
 
 
 //reportes

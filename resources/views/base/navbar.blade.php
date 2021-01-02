@@ -42,12 +42,16 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Reportes</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Formularios</a>
               <div class="dropdown-menu dropdown-menu-right animate slideIn shadow" aria-labelledby="dropdown01">
                 <a class="dropdown-item" href="{{ route('form.a') }}">Formulario A</a>
-                <a class="dropdown-item" href="#">Formulario B</a>
-                <a class="dropdown-item" href="#">Formulario C</a>
-                <a class="dropdown-item" href="#">Formulario D</a>
+                <a class="dropdown-item" href="{{ route('form.b') }}">Formulario B</a>
+                <a class="dropdown-item" href="{{ route('form.c') }}">Formulario C</a>
+                <a class="dropdown-item" href="{{ route('form.d') }}">Formulario D</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ route('acta') }}">Acta de entrega</a>
+                <a class="dropdown-item" href="{{ route('salida') }}">Orden de salida</a>
+                <a class="dropdown-item" href="{{ route('asignacion') }}">Asignación de Mobiliario</a>
               </div>
             </li>
             <li class="nav-item">

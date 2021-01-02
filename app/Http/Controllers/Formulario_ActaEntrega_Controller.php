@@ -8,7 +8,7 @@ use App\Models\Coordinacion;
 use App\Models\ClaseMovimiento;
 use App\Models\ActivoFijo;
 
-class FormularioC_Controller extends Controller
+class Formulario_ActaEntrega_Controller extends Controller
 {
 	public function __construct()
 	{
@@ -18,7 +18,7 @@ class FormularioC_Controller extends Controller
 	public function formulario(){
 		$coordinaciones = Coordinacion::all();
 		$clases = ClaseMovimiento::all();
-		return view('formularios.formulario_c',[
+		return view('formularios.acta_entrega',[
 			'coordinaciones'=>$coordinaciones,
 			'clases'=>$clases
 		]);

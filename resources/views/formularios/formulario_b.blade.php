@@ -1,6 +1,6 @@
 @extends('base.base')
 @section('title')
-Formulario A
+Formulario B
 @endsection
 @section('extraHead')
 <link rel="stylesheet" href="{{asset('css/date/flatpickr.css')}}">
