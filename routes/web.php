@@ -108,6 +108,12 @@ Route::post('af', 'ActivoFijoController@store')->name('activofijo.store');
 
 Route::get('formulario/a','FormularioA_Controller@formulario')->name('form.a');
 Route::post('formulario/a','FormularioA_Controller@store')->name('form.a.store');
+Route::get('formulario/b','FormularioB_Controller@formulario')->name('form.b');
+Route::post('formulario/b','FormularioB_Controller@store')->name('form.b.store');
+Route::get('formulario/c','FormularioC_Controller@formulario')->name('form.c');
+Route::post('formulario/c','FormularioC_Controller@store')->name('form.c.store');
+Route::get('formulario/d','FormularioD_Controller@formulario')->name('form.d');
+Route::post('formulario/bd','FormularioD_Controller@store')->name('form.d.store');
 
 
 //reportes

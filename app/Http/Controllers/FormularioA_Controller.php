@@ -10,6 +10,12 @@ use App\Models\ActivoFijo;
 
 class FormularioA_Controller extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
+    
     //
     public function formulario(){
     	$coordinaciones = Coordinacion::all();
