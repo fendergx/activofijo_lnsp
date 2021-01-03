@@ -1,5 +1,5 @@
 //función js para capturar las áreas de una coordinación
-//para el formulario A 
+//para el formulario B 
 $(document).ready(function() {
     $('.dynamic1').change(function(){  
         if($(this).val()!= ''){
