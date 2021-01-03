@@ -16,6 +16,16 @@ class FormularioA_Controller extends Controller
         $this->middleware('auth');
     } 
     
+    protected $reglas =[
+        'id_coord' => 'required',
+        'nombre_area' => 'required',
+        'nombre_area_2' => 'required',
+        'fecha' => 'required',
+        'id_clase' => 'required',
+        'id_activo' => 'required',
+    ];
+
+
     //
     public function formulario(){
     	$coordinaciones = Coordinacion::all();
@@ -27,6 +37,12 @@ class FormularioA_Controller extends Controller
     }
 
     public function store(){
-    	return back();
+
+        $validator = Validator::make($request->all(), $this->reglas);
+        if ($validator->fails()) {
+            Return Response::json(array('errors' => $validator->getMessageBag()->toArray()));
+        } else {
+
+        }
     }
 }
