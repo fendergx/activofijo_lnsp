@@ -59,6 +59,35 @@ Formulario C
 			</div>
 		</div>
 
+		<div class="form-group row">
+			<label for="name" class="col-md-4 col-form-label text-md-right"><b data-toggle="tooltip" data-placement="top" title="nombre completo">Persona visto bueno: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
+			<div class="col-md-6">
+				<input id="persona_vb" type="text" class="form-control" name="persona_vb" value="{{ old('persona_vb') }}" required>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Cargo: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
+			<div class="col-md-6">
+				<input id="persona_cargo" type="text" class="form-control" name="persona_cargo" value="{{ old('persona_cargo') }}" required>
+
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="name" class="col-md-4 col-form-label text-md-right"><b data-toggle="tooltip" data-placement="top" title="nombre completo">Persona en Administración: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
+			<div class="col-md-6">
+				<input id="persona_admin" type="text" class="form-control" name="persona_admin" value="{{ old('persona_admin') }}" required>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Cargo: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
+			<div class="col-md-6">
+				<input id="persona_admin_cargo" type="text" class="form-control" name="persona_admin_cargo" value="{{ old('persona_admin_cargo') }}" required>
+			</div>
+		</div>
+
 		<div class="form-group row" id="form-especificar" style="display: none;">
 			<label for="name" class="col-md-4 col-form-label text-md-right"><b>Especificar: </b><span class="text-danger" title="Requerido"><b>*</b></span></label>
 			<div class="col-md-6">
