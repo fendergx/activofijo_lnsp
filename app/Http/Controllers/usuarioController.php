@@ -7,6 +7,7 @@ use Validator;
 use Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Redirector;
 
 
 use App\Models\User;
@@ -43,13 +44,13 @@ class usuarioController extends Controller
         'apellidos' => 'required',
     ];
 
-    public function index()
+    public function registrar()
     {
 
         $roles = Rol::all();
         $areas = Area::all();
         $coordinaciones = Coordinacion::all();
-        return view('usuario.index',['roles' => $roles,'areas' => $areas,'coordinaciones' => $coordinaciones]);
+        return view('usuario.registrar',['roles' => $roles,'areas' => $areas,'coordinaciones' => $coordinaciones]);
     }
 
     public function lista()
@@ -83,16 +84,6 @@ public function areas($id){
 
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function success()
-    {
-        return view('usuario.success');
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -113,7 +104,7 @@ public function areas($id){
             $usuario->id_area = $request->nombre_area;
             $usuario->id_rol = $request->id_rol;
             $usuario->save();
-            return View('usuario.success'); 
+            return redirect()->route('usuario.lista')->with('status', 'Usuario '.$request->nombre_usuario.' registrado existosamente');
         }
     }
 

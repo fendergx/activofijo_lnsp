@@ -16,7 +16,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Administración</a>
               <div class="dropdown-menu dropdown-menu-right animate slideIn shadow" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="{{route('usuario.index')}}">Registrar usuario</a>
+                <a class="dropdown-item" href="{{route('usuario.registrar')}}">Registrar usuario</a>
                 <a class="dropdown-item" href="{{ route('usuario.lista') }}">Usuarios</a>
                 <a class="dropdown-item" href="{{ route('coordinacion.index') }}">Coordinaciones</a>
                 <a class="dropdown-item" href="{{ route('area.index') }}">Áreas</a>

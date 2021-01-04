@@ -4,15 +4,19 @@ Administrar usuarios del sistema
 @endsection
 @section('extraJS')
 <script type="text/javascript" src="{{ asset('js/usuario.js') }}"></script>
+@if (session('status'))
+<script type="text/javascript">
+	toastr.success('{{ session('status') }}','Éxito')
+</script>
+@endif
 @endsection
 @section('contenido')
 <h2 class="text-center">Administrar Usuarios del Sistema</h2>
 <br />
-
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<ul>
-			<a class="add-modal btn btn-primary" href="{{route('usuario.index')}}"><span class="fas fa-plus">&nbsp;</span>Registrar usuario</a>
+			<a class="add-modal btn btn-primary" href="{{route('usuario.registrar')}}"><span class="fas fa-user-plus">&nbsp;</span>Registrar usuario</a>
 			
 		</ul>
 	</div>

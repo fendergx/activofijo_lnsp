@@ -35,8 +35,7 @@ Route::delete('area/{id}','AreaController@destroy')->name('area.delete');
 
 
 //registrar
-Route::get('registrar','usuarioController@index')->name('usuario.index');
-Route::get('success','usuarioController@sucess')->name('usuario.success');
+Route::get('registrar','usuarioController@registrar')->name('usuario.registrar');
 Route::post('usuario','usuarioController@store')->name('usuario.store');
 
 //inicio
