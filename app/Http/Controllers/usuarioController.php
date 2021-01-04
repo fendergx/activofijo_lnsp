@@ -19,12 +19,6 @@ use Illuminate\Support\Facades\Hash;
 
 class usuarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -38,7 +32,7 @@ class usuarioController extends Controller
         'apellidos' => 'required',
     ];
 
-        protected $rules_edit =[
+    protected $rules_edit =[
         'nombre_usuario' => 'required',
         'nombres' => 'required',
         'apellidos' => 'required',
@@ -62,15 +56,15 @@ class usuarioController extends Controller
 
     public function edit($id)
     {
-     $usuario = User::findOrFail($id);
-     $roles = Rol::all();
-     $areas = Area::all();
-     $coordinaciones = Coordinacion::all();
-     return view('usuario.edit',['usuario' => $usuario,'roles' => $roles,'areas' => $areas,'coordinaciones' => $coordinaciones]);
- }
+       $usuario = User::findOrFail($id);
+       $roles = Rol::all();
+       $areas = Area::all();
+       $coordinaciones = Coordinacion::all();
+       return view('usuario.edit',['usuario' => $usuario,'roles' => $roles,'areas' => $areas,'coordinaciones' => $coordinaciones]);
+   }
 
- public function perfil()
- {
+   public function perfil()
+   {
     $usuarios = Auth::user();
     return view('usuario.perfil',['usuarios' => $usuarios]);
 }
@@ -91,10 +85,14 @@ public function areas($id){
      */
     public function store(Request $request)
     {
+        $existe = User::where('nombre_usuario','=',$request->nombre_usuario)->pluck('nombre_usuario');
+
         $validator = Validator::make($request->all(), $this->rules);
         if ($validator->fails()) {
             Return Response::json(array('errors' => $validator->getMessageBag()->toArray()));
-        } else {
+        } else if(!empty($existe)){
+            return back()->withInput()->with('status', 'El usuario '.$request->nombre_usuario.' ya existe');;
+        }else{
             $usuario = new User();
             $usuario->nombre_usuario = $request->nombre_usuario;
             $usuario->password = Hash::make($request->password);
@@ -117,11 +115,10 @@ public function areas($id){
      */
     public function update(Request $request, $id)
     {
-
         $validator = Validator::make($request->all(), $this->rules_edit);
         if ($validator->fails()) {
             Return Response::json(array('errors' => $validator->getMessageBag()->toArray()));
-        } else {    
+        } else{    
             $usuario = User::findOrFail($id);
             $usuario->nombre_usuario = $request->nombre_usuario;
             $usuario->nombres = $request->nombres;

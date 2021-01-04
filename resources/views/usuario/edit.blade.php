@@ -21,12 +21,6 @@ Editar usuario
 
 				<div class="col-md-6">
 					<input id="id_usuario" type="text" class="form-control" name="id_usuario" value="{{ $usuario->id_usuario }}" required disabled>
-
-					@error('name')
-					<span class="invalid-feedback" role="alert">
-						<strong>{{ $message }}</strong>
-					</span>
-					@enderror
 				</div>
 			</div>
 			<div class="form-group row">
@@ -34,12 +28,6 @@ Editar usuario
 
 				<div class="col-md-6">
 					<input id="nombre_usuario" type="text" class="form-control @error('name') is-invalid @enderror" name="nombre_usuario" value="{{ $usuario->nombre_usuario }}" required autocomplete="name" autofocus pattern="[a-z.]+$" title="No se permiten espacios, sólo puede ingresar letras en minúscula y punto">
-
-					@error('name')
-					<span class="invalid-feedback" role="alert">
-						<strong>{{ $message }}</strong>
-					</span>
-					@enderror
 				</div>
 			</div>
 
@@ -49,12 +37,6 @@ Editar usuario
 
 				<div class="col-md-6">
 					<input id="nombres" type="text" class="form-control @error('nombres') is-invalid @enderror" name="nombres" value="{{ $usuario->nombres }}" required autocomplete="name" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]+$" title="Solo puede ingresar letras" autofocus>
-
-					@error('name')
-					<span class="invalid-feedback" role="alert">
-						<strong>{{ $message }}</strong>
-					</span>
-					@enderror
 				</div>
 			</div>
 
@@ -63,12 +45,6 @@ Editar usuario
 
 				<div class="col-md-6">
 					<input id="apellidos" type="text" class="form-control @error('apellidos') is-invalid @enderror" name="apellidos" value="{{ $usuario->apellidos }}" required autocomplete="name" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]+$" title="Solo puede ingresar letras" autofocus>
-
-					@error('name')
-					<span class="invalid-feedback" role="alert">
-						<strong>{{ $message }}</strong>
-					</span>
-					@enderror
 				</div>
 			</div>
 

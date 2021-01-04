@@ -4,6 +4,11 @@ Registrar usuario
 @endsection
 @section('extraJS')
 <script type="text/javascript" src="{{ asset('js/registrar.js') }}"></script>
+@if (session('status'))
+<script type="text/javascript">
+	toastr.warning('{{ session('status') }}','Error');
+</script>
+@endif
 @endsection
 @section('contenido')
 
@@ -20,13 +25,7 @@ Registrar usuario
 					<label for="name" class="col-md-4 col-form-label text-md-right">Nombre de usuario: <span class="text-danger" title="Requerido"><b>*</b></span></label></label>
 
 					<div class="col-md-6">
-						<input id="nombre_usuario" type="text" class="form-control @error('name') is-invalid @enderror" name="nombre_usuario" value="{{ old('name') }}" required autocomplete="name" autofocus pattern="[a-z.]+$" title="No se permiten espacios, sólo puede ingresar letras en minúscula y punto">
-
-						@error('name')
-						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
-						</span>
-						@enderror
+						<input id="nombre_usuario" type="text" class="form-control @error('name') is-invalid @enderror" name="nombre_usuario" value="{{ old('nombre_usuario') }}" required autocomplete="name" autofocus pattern="[a-z.]+$" title="No se permiten espacios, sólo puede ingresar letras en minúscula y punto">
 					</div>
 				</div>
 				
@@ -36,12 +35,6 @@ Registrar usuario
 
 					<div class="col-md-6">
 						<input id="nombres" type="text" class="form-control @error('nombres') is-invalid @enderror" name="nombres" value="{{ old('nombres') }}" required autocomplete="name" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]+$" title="Solo puede ingresar letras" autofocus>
-
-						@error('name')
-						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
-						</span>
-						@enderror
 					</div>
 				</div>
 
@@ -50,12 +43,6 @@ Registrar usuario
 
 					<div class="col-md-6">
 						<input id="apellidos" type="text" class="form-control @error('apellidos') is-invalid @enderror" name="apellidos" value="{{ old('apellidos') }}" required autocomplete="name" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]+$" title="Solo puede ingresar letras" autofocus>
-
-						@error('name')
-						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
-						</span>
-						@enderror
 					</div>
 				</div>
 
@@ -94,24 +81,18 @@ Registrar usuario
 
 
 				<div class="form-group row">
-					<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}<span class="text-danger" title="Requerido"><b>*</b></span></label>
+					<label for="password" class="col-md-4 col-form-label text-md-right">Contraseña: <span class="text-danger" title="Requerido"><b>*</b></span></label>
 
 					<div class="col-md-6">
-						<input id="password" minlength="8" maxlength="40" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-						@error('password')
-						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
-						</span>
-						@enderror
+						<input id="password" maxlength="40" type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" required>
 					</div>
 				</div>
 
 				<div class="form-group row">
-					<label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}<span class="text-danger" title="Requerido"><b>*</b></span></label>
+					<label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirmar contraseña: <span class="text-danger" title="Requerido"><b>*</b></span></label>
 
 					<div class="col-md-6">
-						<input id="password-confirm" minlength="8" maxlength="40" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+						<input id="password-confirm" maxlength="40" type="password" class="form-control" name="password-confirm" value="{{ old('password-confirm') }}" required>
 					</div>
 				</div>
 
