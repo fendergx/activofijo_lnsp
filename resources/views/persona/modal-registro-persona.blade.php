@@ -62,7 +62,7 @@
 				<!-- Footer del modal-->
 				<div class="modal-footer">
 					<button class="btn btn-secondary" id="cancelar-registro" data-dismiss="modal">Cancelar</button>
-					<button class="crear btn btn-success addPersona" id="registrar" data-dismiss="modal">Registrar</button>
+					<button class="crear btn btn-primary addPersona" id="registrar" data-dismiss="modal">Registrar</button>
 				</div>
 			</div>
 		</div>
