@@ -15,9 +15,6 @@
             @if(Auth::user()->id_rol == 1)
             <!--Para administrador de sistema -->
             <li class="nav-item">
-              <a class="nav-link" href="{{route('usuario.registrar')}}">Registrar usuario <i class="fas fa-user-plus" aria-hidden="true"></i></a> 
-            </li>
-            <li class="nav-item">
              <a class="nav-link" href="{{route('usuario.lista')}}">Usuarios</a> 
            </li>
            <li class="nav-item">
