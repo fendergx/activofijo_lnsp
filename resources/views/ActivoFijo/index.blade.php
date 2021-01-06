@@ -1,77 +1,74 @@
 @extends('base.base')
-
-@section('extraHead')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-@endsection
-
 @section('title')
-Activo Fijo
+Gestión de activos fijos
 @endsection
-
+@section('extraJS')
+<script type="text/javascript" src="{{asset('js/activofijo.js')}}"></script>
+@endsection
 @section('contenido')
-<h2 class="text-center">Administrar Activo Fijo</h2>
+<h2 class="text-center">Activos fijos</h2>
 <br />
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<ul>
-			<a class="btn btn-primary" href="{{route('activofijo.create')}}"><span class="fas fa-plus">&nbsp;</span>Registrar nuevo Activo Fijo</a>
+			<a class="btn btn-primary" href="{{route('activofijo.create')}}">
+				<span class="fas fa-plus">&nbsp;</span>Agregar activo fijo
+			</a>
+			&nbsp; &nbsp;
+			<button class="excel btn btn-success">
+				<span class="fas fa-file-export">&nbsp;</span>Exportar a Excel
+			</button>
 		</ul>
 	</div>
 	<div class="panel-body">
-		<div class="table-responsive">
-			<table id="tb_activos" class="table table-sm table-hover">
-				<thead class="thead-light">
-					<tr>
-						<th>id</th>
-						<th>Codigo</th>
-						<th>Serie</th>
-						<th>Nombre</th>
-						<th>Ubicación</th>
-						<th>Responsable</th>
-						<th>Acciones</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-	</div>
-</div>
+		<table class="table table-hover" id="postTable">
+			<thead class="thead-light">
+				<tr>
+					<th>Código</th>
+					<th># Serie</th>
+					<th>Nombre</th>
+					<th>Marca</th>
+					<th>Modelo</th>
+					<th>Estado</th>
+					<th><i class="text-centerx">Acciones</i></th>
+				</tr>
+				{{ csrf_field() }}
+			</thead>
+			<tbody>
+				@if(count($activos)<=0)
+				<script type="text/javascript">
+					window.onload = function() {
+						toastr.clear();
+						toastr.info('No hay activos para listar', 'Información', {timeOut: 7000});
+					};
+				</script>
+				@endif
 
-
-@endsection
-@section('extrajsfooter')
-	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			var table = $('#tb_activos').DataTable({
-					//searching: false,
-					//ordering:  false,
-					//responsivo
-					responsive: true,
-					select: true,
-					language: {
-						url: 'http://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json'
-					},
-					//scrollY: 350, //muestra 6 registros
-					//paging: true, //paginación habilitada
-					"serverSide":false, 
-					"ajax": "{{ url('api/activos') }}",
-					"columns": [
-					//para ocultar https://datatables.net/examples/basic_init/hidden_columns.html
-					{data: 'id_af',"visible": false},
-					{data: 'codigo_af'},
-					{data: 'serie_af'},
-					{data: 'nombre_af'},
-					{data: 'id_ubicacion'},
-					{data: 'persona_responsable'},
-					{data: 'botones'},
-                        //{data: 'coordinacion->nombre_coord', name: 'coordinacion->nombre_coord'},
-                        //{data: 'usuario_pk->nombre_coord', name: 'usuario_pk->name'},
-                        ],
-                    });
-
-		});
-	</script>
+				@foreach($activos as $indexKey => $activo)
+				<tr class="item{{$activo->id_af}}">
+					<td>{{$activo->codigo_af}}</td>
+					<td>{{$activo->serie_af}}</td>
+					<td>{{$activo->nombre_af}}</td>
+					<td>{{$activo->marca_af}}</td>
+					<td>{{$activo->estado->estado_af}}</td>
+					<td>{{$activo->modelo_af}}</td>
+					<td>
+						<a class="btn btn-info" href="#">
+							<span class="fas fa-edit"></span>&nbsp;Editar
+						</a>
+						<button class="delete-modal btn btn-danger" href="#" data-id="{{$activo->id_af}}">
+							<span class="fas fa-trash"></span>&nbsp;Eliminar
+						</button>
+						<a href="{{route('activofijo.detalle',['id' => $activo->id_af])}} " class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Ver detalles del activo">
+							<span class="fas fa-eye"></span>
+						</a>
+					</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</div><!-- /.panel-body -->
+</div><!-- /.panel panel-default -->
+@include('ActivoFijo.modal-eliminar-activo-fijo')
+@include('ActivoFijo.modal-exportar-excel')
 @endsection

@@ -101,6 +101,8 @@ Route::delete('persona/{id}','PersonaRespController@destroy')->name('persona.del
 Route::get('af', 'ActivoFijoController@index')->name('activofijo.index');
 Route::get('af/agregar', 'ActivoFijoController@create')->name('activofijo.create');
 Route::post('af', 'ActivoFijoController@store')->name('activofijo.store');
+Route::put('fuente/{id}','ActivoFijoController@update')->name('fuente.update');
+Route::delete('af/{id}','ActivoFijoController@destroy')->name('fuente.delete');
 Route::get('activofijo/detalle/{id}', 'ActivoFijoController@show')->name('activofijo.detalle');
 
 
