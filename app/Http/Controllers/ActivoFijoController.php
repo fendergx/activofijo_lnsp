@@ -41,7 +41,7 @@ class ActivoFijoController extends Controller
     public function index()
     {
         if(Auth::user()->id_rol == 2){
-            $activos = ActivoFijo::where('id_coord', '=', 1)->paginate(20);
+            $activos = ActivoFijo::paginate(20);
             return view('ActivoFijo.index',['activos' => $activos]);
         }else{
             return view('errors.403');
@@ -152,7 +152,8 @@ class ActivoFijoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $activo = ActivoFijo::where('id_af', $id)->get();
+        return view('ActivoFijo.detalle',['activo' => $activo]);
     }
 
     /**

@@ -67,6 +67,10 @@ Gestión de activos fijos
 				@endforeach
 			</tbody>
 		</table>
+		<!-- esta parte se edita en bootstrap-4 de pagination -->
+		<div class="d-flex justify-content-center">
+			{{ $activos->links() }}
+		</div>
 	</div><!-- /.panel-body -->
 </div><!-- /.panel panel-default -->
 @include('ActivoFijo.modal-eliminar-activo-fijo')
