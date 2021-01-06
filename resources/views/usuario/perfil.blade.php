@@ -46,6 +46,10 @@ Perfil usuario
 		</div>
 	</div>
 	@endif
+	<div class="d-flex justify-content-center">
+		<a class="btn btn-secondary" href="{{ url()->previous() }}">Regresar</a>
+	</div>
+
 </div>
 
 @endsection
