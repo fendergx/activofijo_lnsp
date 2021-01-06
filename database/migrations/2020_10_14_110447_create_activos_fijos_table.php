@@ -23,6 +23,7 @@ class CreateActivosFijosTable extends Migration
             $table->date('fecha_adq_af');
             $table->decimal('valor_adq_af', 9, 2);
             $table->decimal('valor_actual_af', 9, 2);
+            $table->timestamp('fecha_depreciado')->nullable();
             $table->string('descripcion_af')->nullable();
             $table->boolean('desecha_af')->default(0);
             $table->boolean('export_af')->default(0);
