@@ -17,7 +17,7 @@ Formulario C
 @section('contenido')
 
 <h2 class="text-center">FORMULARIO MOVIMIENTO DE ACTIVO INTERNO</h2>
-<h3 class="text-center"> (Formulario B) - ÁREAS DIFERENTES</h3>
+<h3 class="text-center"> (Formulario C) - PARA DESCARGO</h3>
 
 
 <div class="card-body">

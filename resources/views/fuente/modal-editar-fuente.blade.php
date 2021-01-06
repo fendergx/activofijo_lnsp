@@ -34,7 +34,7 @@
 			<!-- Footer del modal-->
 			<div class="modal-footer">
 				<button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-				<button class="editar btn btn-success edit" data-dismiss="modal">Guardar</button>
+				<button class="editar btn btn-primary edit" data-dismiss="modal">Guardar</button>
 			</div>
 		</div>
 	</div>
