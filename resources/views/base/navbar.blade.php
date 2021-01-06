@@ -91,7 +91,7 @@
           @if(Auth::user()->id_rol == 4)
           <!--Para jefe de laboratorio -->
           <li class="nav-item">
-            <a class="nav-link" href="#">Activos fijos</a> 
+            <a class="nav-link" href="{{ route('af.usuarios') }}">Activos fijos</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Solicitar activo fijo</a> 
@@ -101,14 +101,14 @@
           @if(Auth::user()->id_rol == 5)
           <!--Para jefe de area -->
           <li class="nav-item">
-            <a class="nav-link" href="#">Activos fijos</a> 
+            <a class="nav-link" href="{{ route('af.usuarios') }}">Activos fijos</a> 
           </li>
           @endif
 
           @if(Auth::user()->id_rol == 6)
           <!--Para usuario de activo fijo -->
           <li class="nav-item">
-            <a class="nav-link" href="#">Activos fijos</a> 
+            <a class="nav-link" href="{{ route('af.usuarios') }}">Activos fijos</a> 
           </li>
           @endif
         </ul>

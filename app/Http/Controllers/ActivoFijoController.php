@@ -100,6 +100,32 @@ class ActivoFijoController extends Controller
         //return back()->withInput();
     }
 
+    public function activos_usuarios(){
+
+        if(Auth::user()->id_rol == 4){
+            $coord = Auth::user()->id_coord;
+            $activos = ActivoFijo::where('id_coord', '=', $coord)->paginate(20);
+            $etiqueta = Coordinacion::where('id_coord', '=', $coord)->pluck('nombre_coord');
+
+            return view('ActivoFijo.lista_activofijo_usuario',[
+                'activos' => $activos,
+                'etiqueta' => $etiqueta]);
+
+        }else if(Auth::user()->id_rol == 5 || Auth::user()->id_rol == 6){
+            $area = Auth::user()->id_area;
+            $activos = ActivoFijo::where('id_area', '=', $area)->paginate(20);
+            $etiqueta = Area::where('id_area', '=', $area)->pluck('nombre_area');
+
+            return view('ActivoFijo.lista_activofijo_usuario',[
+                'activos' => $activos,
+                'etiqueta' => $etiqueta]);
+
+        }else{
+            return view('errors.403');
+
+        }
+        
+    }
 
     /**
      * Display the specified resource.
@@ -109,8 +135,9 @@ class ActivoFijoController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $activo = ActivoFijo::where('id_af', $id)->get();
+        return view('ActivoFijo.detalle',['activo' => $activo]);
+}
 
     /**
      * Show the form for editing the specified resource.

@@ -101,6 +101,7 @@ Route::delete('persona/{id}','PersonaRespController@destroy')->name('persona.del
 Route::get('af', 'ActivoFijoController@index')->name('activofijo.index');
 Route::get('af/agregar', 'ActivoFijoController@create')->name('activofijo.create');
 Route::post('af', 'ActivoFijoController@store')->name('activofijo.store');
+Route::get('activofijo/detalle/{id}', 'ActivoFijoController@show')->name('activofijo.detalle');
 
 
 //formularios
@@ -126,4 +127,10 @@ Route::post('formulario/salida','Formulario_OrdenSalida_Controller@store')->name
 
 //reportes
 
+
+//Excel
 Route::get('excel','ExcelController@exportarExcel')->name('excel.export.af');
+
+//Visualizar activos 
+Route::get('activofijo','ActivoFijoController@activos_usuarios')->name('af.usuarios');
+
