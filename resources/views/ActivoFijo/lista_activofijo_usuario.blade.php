@@ -7,7 +7,13 @@ Activos fijos de {{$etiqueta[0]}}
 <br />
 <div class="panel panel-default">
 	<div class="panel-heading">
-	</div>
+		<ul>
+			<form method="GET" action="{{route('af.usuarios')}}" class="form-inline mt-2 float-right">
+				<input class="form-control" type="text" id="codigo" name="codigo" placeholder="Buscar por código" aria-label="Buscar por código">
+				<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+			</form>
+		</ul>
+	</div> <br><br>
 	<div class="panel-body">
 		<table class="table table-hover" id="postTable">
 			<thead class="thead-light">

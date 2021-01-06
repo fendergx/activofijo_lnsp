@@ -18,6 +18,10 @@ Gestión de activos fijos
 			<button class="excel btn btn-success">
 				<span class="fas fa-file-export">&nbsp;</span>Exportar a Excel
 			</button>
+			<form method="GET" action="{{route('activofijo.index')}}" class="form-inline mt-2 float-right">
+				<input class="form-control" type="text" id="codigo" name="codigo" placeholder="Buscar por código" aria-label="Buscar por código">
+				<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+			</form>
 		</ul>
 	</div>
 	<div class="panel-body">

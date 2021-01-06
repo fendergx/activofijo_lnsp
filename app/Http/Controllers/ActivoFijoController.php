@@ -38,11 +38,17 @@ class ActivoFijoController extends Controller
         }
         echo $output;
     }
-    public function index()
+    public function index(Request $request)
     {
         if(Auth::user()->id_rol == 2){
-            $activos = ActivoFijo::paginate(20);
+            $codigo = $request->get('codigo');
+
+            $activos = ActivoFijo::orderBy('id_af','ASC')
+            ->codigo($codigo)
+            ->paginate(20);
             return view('ActivoFijo.index',['activos' => $activos]);
+
+
         }else{
             return view('errors.403');
         }
@@ -105,11 +111,14 @@ class ActivoFijoController extends Controller
         //return back()->withInput();
     }
 
-    public function activos_usuarios(){
+    public function activos_usuarios(Request $request){
+        $codigo = $request->get('codigo');
 
         if(Auth::user()->id_rol == 4){
             $coord = Auth::user()->id_coord;
-            $activos = ActivoFijo::where('id_coord', '=', $coord)->paginate(20);
+            $activos = ActivoFijo::where('id_coord', '=', $coord)
+            ->codigo($codigo)
+            ->paginate(20);
             $etiqueta = Coordinacion::where('id_coord', '=', $coord)->pluck('nombre_coord');
 
             return view('ActivoFijo.lista_activofijo_usuario',[
@@ -118,7 +127,9 @@ class ActivoFijoController extends Controller
 
         }else if(Auth::user()->id_rol == 5 || Auth::user()->id_rol == 6){
             $area = Auth::user()->id_area;
-            $activos = ActivoFijo::where('id_area', '=', $area)->paginate(20);
+            $activos = ActivoFijo::where('id_area', '=', $area)
+            ->codigo($codigo)
+            ->paginate(20);
             $etiqueta = Area::where('id_area', '=', $area)->pluck('nombre_area');
 
             return view('ActivoFijo.lista_activofijo_usuario',[
@@ -153,7 +164,7 @@ class ActivoFijoController extends Controller
     public function edit($id)
     {
         $activo = ActivoFijo::where('id_af', $id)->get();
-        return view('ActivoFijo.detalle',['activo' => $activo]);
+        return view('ActivoFijo.editar',['activo' => $activo]);
     }
 
     /**

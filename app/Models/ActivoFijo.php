@@ -55,4 +55,12 @@ class ActivoFijo extends Model
         return $this->belongsTo(User::class, 'persona_responsable','id_usuario');
     }
 
+    //scopes
+    public function scopeCodigo($query, $codigo)
+    {
+        if($codigo){
+            return $query->where('codigo_af','LIKE',"%$codigo%");
+        }
+    }
+
 }
