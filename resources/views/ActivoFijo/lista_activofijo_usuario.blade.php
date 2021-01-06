@@ -43,9 +43,9 @@ Activos fijos de {{$etiqueta[0]}}
 					<td>{{$activo->modelo_af}}</td>
 					<td>{{$activo->ubicacion->ubicacion_af}}</td>
 					<td>
-						<button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver detalles del activo">
+						<a href="{{route('activofijo.detalle',['id' => $activo->id_af])}} " class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Ver detalles del activo">
 							<span class="fas fa-eye"></span>
-						</button>
+						</a>
 					</td>
 				</tr>
 				@endforeach
