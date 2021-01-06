@@ -17,12 +17,21 @@ class UsuariosSeeder extends Seeder
      */
     public function run()
     {
+
+        User::create(['nombre_usuario' => 'admin',
+            'password' => Hash::make('admin'),
+            'nombres' => 'Super',
+            'apellidos' => 'Administrador',
+            'id_rol' => '1',
+            
+        ]);
+
         User::create(['nombre_usuario' => 'karen.penate',
         	'password' => Hash::make('karen'),
         	'nombres' => 'Karen Elvira',
         	'apellidos' => 'Peñate Aviles',
         	'id_rol' => '1',
-            
+
         ]);
 
         User::create(['nombre_usuario' => 'fernando.aguilar',
