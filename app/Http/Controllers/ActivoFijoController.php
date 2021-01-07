@@ -54,6 +54,23 @@ class ActivoFijoController extends Controller
         }
     }  
 
+    public function depreciacion(Request $request)
+    {
+        if(Auth::user()->id_rol == 2){
+            $codigo = $request->get('codigo');
+            $activos = ActivoFijo::orderBy('id_af','ASC')
+            ->codigo($codigo)
+            ->paginate(20);
+            return view('ActivoFijo.depreciacion',['activos' => $activos]);
+        }else{
+            return view('errors.403');
+        }
+    } 
+
+    public function depreciar(Request $request){
+        
+    }
+
     /** 
      * Show the form for creating a new resource.
      *

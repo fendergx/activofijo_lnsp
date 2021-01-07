@@ -106,6 +106,10 @@ Route::put('af/{id}','ActivoFijoController@update')->name('activofijo.update');
 Route::delete('af/{id}','ActivoFijoController@destroy')->name('activofijo.delete');
 Route::get('activofijo/detalle/{id}', 'ActivoFijoController@show')->name('activofijo.detalle');
 
+//sección de depreciación
+Route::get('depreciacion/', 'ActivoFijoController@depreciacion')->name('activofijo.depreciacion');
+Route::put('depreciar/{id}', 'ActivoFijoController@depreciar')->name('activofijo.depreciar');
+
 
 //formularios
 
