@@ -40,7 +40,7 @@
             <a class="nav-link" href="{{route('activofijo.index')}}">Activo Fijo</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Solicitudes de movimiento</a> 
+            <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="De movimiento de activo fijo">Solicitudes</a> 
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Formularios</a>
@@ -56,7 +56,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Depreciación</a> 
+            <a class="nav-link" href="{{route('activofijo.depreciacion')}}">Depreciación</a> 
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Historial</a>
@@ -118,9 +118,13 @@
           <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
               <span class="caret"></span>
-              {{head(explode(' ', trim(Auth::user()->nombres))) }}  {{head(explode(' ', trim(Auth::user()->apellidos))) }} <span class="far fa-user"></span> </a>
+              <span class="far fa-user"></span> </a>
 
               <div class="dropdown-menu dropdown-menu-right animate slideIn shadow" aria-labelledby="navbarDropdown">
+                <i class="dropdown-item text-right">
+                  {{head(explode(' ', trim(Auth::user()->nombres))) }}  {{head(explode(' ', trim(Auth::user()->apellidos))) }}
+                </i>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-right" href="{{ route('usuario.perfil') }}">
                   Mi perfil &nbsp;<i class="fas fa-info"></i>
                 </a>
