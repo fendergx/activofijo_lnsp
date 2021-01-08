@@ -1,21 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Reporte A</title>
+	<title>Reporte B</title>
 	<style type="text/css">
 		<?php include(public_path().'/css/activofijo/reportes.css');?>
 	</style>
 </head>
-
 <body>
 	<div class="img-container-block">
 		<img style="display: block; align-content: center;" src="https://test20212x.000webhostapp.com/logo_reporte.png" alt="logo" height="100px">
 	</div>
 	<h4 class="text-center">MINISTERIO DE SALUD 
 		<br>UNIDAD DE ACTIVO FIJO
-		<br>FORMULARIO MOVIMIENTO DE ACTIVO INTERNO (Formulario A)
-		<br>ENTRE MISMAS ÁREAS
+		<br>FORMULARIO MOVIMIENTO DE ACTIVO INTERNO (Formulario B)
+		<br>ÁREAS DIFERENTES
 	</h4>
 	<table class="table">
 		<tr>
@@ -64,28 +63,35 @@
 			<td> </td>
 		</tr>
 	</table>
-	<br>
 	<table>
 		<tr>
 			<td>
 				<b>&nbsp;ENTREGA</b><br><br>  
-				&nbsp;F. <br><br><br><br>
+				&nbsp;F. <br><br>
 				<br>&nbsp;Nombre:      
 				<br>&nbsp;Cargo:<br>
 			</td>
 			<td><b>&nbsp;RECIBE</b><br><br>   
-				&nbsp;F. <br><br><br><br>
-				<br>&nbsp;Nombre:      
-				<br>&nbsp;Cargo:<br>
-			</td>
-			<td>
-				<b>&nbsp;AUTORIZA</b><br><br> 
-				&nbsp;F. <br><br><br><br>
+				&nbsp;F. <br><br>
 				<br>&nbsp;Nombre:      
 				<br>&nbsp;Cargo:<br>
 			</td>
 		</tr>
-	</table>
+		<tr>
+			<td>
+				<b>&nbsp;Autoriza Coordinación de Área que entrega:</b><br><br>  
+				&nbsp;F. <br><br>
+				<br>&nbsp;Nombre:      
+				<br>&nbsp;Cargo:<br>
+			</td>
+			<td><b>&nbsp;Autoriza Coordinación de Área que recibe:
+			</b><br><br>   
+			&nbsp;F. <br><br>
+			<br>&nbsp;Nombre:      
+			<br>&nbsp;Cargo:<br>
+		</td>
+	</tr>
+</table>
 
 </body>
 </html>

@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Reporte A</title>
+	<title>Reporte C</title>
 	<style type="text/css">
 		<?php include(public_path().'/css/activofijo/reportes.css');?>
 	</style>
 </head>
-
 <body>
 	<div class="img-container-block">
 		<img style="display: block; align-content: center;" src="https://test20212x.000webhostapp.com/logo_reporte.png" alt="logo" height="100px">
 	</div>
 	<h4 class="text-center">MINISTERIO DE SALUD 
 		<br>UNIDAD DE ACTIVO FIJO
-		<br>FORMULARIO MOVIMIENTO DE ACTIVO INTERNO (Formulario A)
-		<br>ENTRE MISMAS ÁREAS
+		<br>FORMULARIO MOVIMIENTO DE ACTIVO INTERNO PARA DESCARGO (Formulario C)
 	</h4>
 	<table class="table">
 		<tr>
@@ -33,7 +31,7 @@
 				<br><br>
 			</td>
 			<td>
-				<b>Clase de Movimiento: </b><br>insertar 
+				<b>Clase de Movimiento: </b><br>Para trámite de descargo
 			</td>
 		</tr>
 	</table>
@@ -64,28 +62,37 @@
 			<td> </td>
 		</tr>
 	</table>
-	<br>
 	<table>
 		<tr>
 			<td>
-				<b>&nbsp;ENTREGA</b><br><br>  
-				&nbsp;F. <br><br><br><br>
+				<b>&nbsp;Sección que entrega:</b><br><br>  
+				&nbsp;F. <br><br>
 				<br>&nbsp;Nombre:      
 				<br>&nbsp;Cargo:<br>
 			</td>
-			<td><b>&nbsp;RECIBE</b><br><br>   
-				&nbsp;F. <br><br><br><br>
-				<br>&nbsp;Nombre:      
-				<br>&nbsp;Cargo:<br>
-			</td>
-			<td>
-				<b>&nbsp;AUTORIZA</b><br><br> 
-				&nbsp;F. <br><br><br><br>
-				<br>&nbsp;Nombre:      
-				<br>&nbsp;Cargo:<br>
-			</td>
-		</tr>
-	</table>
+			<td><b>&nbsp;Recibe en administración:
+			</b><br><br>   
+			&nbsp;F. <br><br>
+			<br>&nbsp;Nombre:      
+			<br>&nbsp;Cargo:<br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<b>&nbsp;Autoriza coordinación de área que entrega:</b>
+			<br><br>  
+			&nbsp;F. <br><br>
+			<br>&nbsp;Nombre:      
+			<br>&nbsp;Cargo:<br>
+		</td>
+		<td><b>&nbsp;Visto bueno:
+		</b><br><br>   
+		&nbsp;F. <br><br>
+		<br>&nbsp;Nombre:      
+		<br>&nbsp;Cargo:<br>
+	</td>
+</tr>
+</table>
 
 </body>
 </html>
