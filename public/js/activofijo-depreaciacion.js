@@ -6,7 +6,7 @@ $(window).load(function(){
 /* Modal depreciar*/
 $(document).on('click', '.modal-depreciacion', function() {
     id = $(this).data('id');
-    actual = $(this).data('actual');
+    actual = parseFloat($(this).data('actual'));
     document.getElementById('label_af').innerHTML=$(this).data('nombre');
     document.getElementById('valor_actual_af').innerHTML='$ '+$(this).data('actual');
     $('#modal-depreciar-activo-fijo').modal({backdrop: 'static', keyboard: false},"show");
@@ -26,22 +26,22 @@ $('.modal-footer').on('click', '.depreciar', function() {
             toastr.warning('No debe colocar el mismo valor o mayor que el actual', 'Atención!', {timeOut: 7000});
         }, 500);
     }else{
-       $.ajax({
-          type: 'PUT',
-          url: 'depreciar/'+id,
-          data: {
-             '_token': $('input[name=_token]').val(),
-             'valor': valor,
-         },
+     $.ajax({
+      type: 'PUT',
+      url: 'depreciar/'+id,
+      data: {
+       '_token': $('input[name=_token]').val(),
+       'valor': valor,
+   },
 
-         success: function(data) {
-             toastr.success('Se ha depreciado correctamente!', 'Éxito!', {timeOut: 2300});
-             setTimeout(function(){
-              window.location.reload(1);
-          }, 3200);      
-         },
-     }).fail( function( jqXHR, textStatus, errorThrown ) {
-         toastr.warning('Error', 'Error!');
-     });
+   success: function(data) {
+       toastr.success('Se ha depreciado correctamente!', 'Éxito!', {timeOut: 2300});
+       setTimeout(function(){
+          window.location.reload(1);
+      }, 3200);      
+   },
+}).fail( function( jqXHR, textStatus, errorThrown ) {
+   toastr.error('El sistema no procesó su solicitud', 'Error!');
+});
  }//fin else
 });

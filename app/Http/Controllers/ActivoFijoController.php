@@ -7,6 +7,7 @@ use Validator;
 use Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 
 use App\Models\ActivoFijo;
@@ -72,6 +73,8 @@ class ActivoFijoController extends Controller
         if($activo->valor_actual_af <= $request->valor){
             return abort(500);
         }else{
+            $activo->valor_actual_af = $request->valor;
+            $activo->fecha_depreciado = Carbon::now();
             $activo->save();
             return response()->json($activo);
         }
