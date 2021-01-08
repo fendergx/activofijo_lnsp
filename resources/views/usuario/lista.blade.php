@@ -38,7 +38,7 @@ Administrar usuarios del sistema
 					<td>{{$usuario->nombres}}&nbsp;{{$usuario->apellidos}}</td>
 					<td>{{$usuario->rol->nombre_rol}}</td>
 					<td>
-						<button class="password-modal btn btn-warning" data-id="{{$usuario->id_usuario}}">
+						<button class="password-modal btn btn-warning" data-id="{{$usuario->id_usuario}}" data-toggle="tooltip" data-placement="top" title="Cambiar contraseña de usuario">
 							<span class="fas fa-key"></span>&nbsp;Cambiar
 						</button>
 						<button class="ver-modal btn btn-secondary" data-usuario="{{$usuario->nombre_usuario}}" data-nombre="{{$usuario->nombres}}" data-ape="{{$usuario->apellidos}}" data-rol="{{$usuario->rol->nombre_rol}}" data-area="{{ isset($usuario->area->nombre_area) ? $usuario->area->nombre_area : 0 }}" data-coord="{{ isset($usuario->coordinacion->nombre_coord) ? $usuario->coordinacion->nombre_coord : 0 }}">
