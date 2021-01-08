@@ -93,8 +93,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('af.usuarios') }}">Activos fijos</a> 
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Solicitar activo fijo</a> 
+          <li class="nav-item"> 
+            <a class="nav-link" href="{{ route('solicitud_af.index_usuario') }}"><i class="fas fa-list"></i>&nbsp;Mis solicitudes</a> 
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" href="{{ route('solicitud_af.formulario') }}">Solicitar activo fijo <i class="fas fa-external-link-alt"></i></a> 
           </li>
           @endif
 

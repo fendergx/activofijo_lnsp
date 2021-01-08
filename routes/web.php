@@ -141,3 +141,22 @@ Route::get('excel','ExcelController@exportarExcel')->name('excel.export.af');
 //Visualizar activos 
 Route::get('activofijo','ActivoFijoController@activos_usuarios')->name('af.usuarios');
 
+//solicitudes activos
+Route::get('solicitudes','SolicitudesAFController@index')->name('solicitud_af.index');
+Route::get('myrequests','SolicitudesAFController@requests')->name('solicitud_af.index_usuario');
+Route::get('solicitar','SolicitudesAFController@solicitar')->name('solicitud_af.formulario');
+Route::post('solicitar/{id}','SolicitudesAFController@store')->name('solicitud_af.store');
+
+//historial de movimientos
+/*
+*
+*
+*
+*
+* 
+ */
+
+//test
+Route::get('test', function () {
+	return view('solicitud_activo_fijo.formulario_solicitud_af', ['name' => 'test']);
+});
