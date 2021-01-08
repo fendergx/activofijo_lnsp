@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Coordinacion;
 use App\Models\ClaseMovimiento;
 use App\Models\ActivoFijo;
+use PDF;
+use Carbon\Carbon;
 
 class FormularioA_Controller extends Controller
 {
@@ -44,5 +46,13 @@ class FormularioA_Controller extends Controller
         } else {
 
         }
+    }
+
+    public function reporte(){
+        $data = ActivoFijo::all();
+        error_reporting(E_ALL ^ E_DEPRECATED);
+        $pdf = PDF::loadView('reportes.reporte_a',compact('data'));
+        $pdf->setPaper('letter', 'portrait');
+        return $pdf->stream('pdf-'.date('d-m-Y').'.pdf',array('Attachment'=>0));;
     }
 }
