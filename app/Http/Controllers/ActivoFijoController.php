@@ -69,7 +69,7 @@ class ActivoFijoController extends Controller
 
     public function depreciar(Request $request, $id){
         $activo = ActivoFijo::findOrFail($id);
-        if($activo->valor_actual_af >= $request->valor){
+        if($activo->valor_actual_af <= $request->valor){
             return abort(500);
         }else{
             $activo->save();
