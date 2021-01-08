@@ -20,10 +20,9 @@ class UsuariosSeeder extends Seeder
 
     	User::create(['nombre_usuario' => 'admin',
     		'password' => Hash::make('admin'),
-    		'nombres' => 'Super',
-    		'apellidos' => 'Administrador',
+    		'nombres' => 'Administrador de ',
+    		'apellidos' => 'Sistema',
     		'id_rol' => '1',
-
     	]);
 
     	User::create(['nombre_usuario' => 'admin.activo',
@@ -36,7 +35,7 @@ class UsuariosSeeder extends Seeder
     	User::create(['nombre_usuario' => 'admin.preparaduria',
     		'password' => Hash::make('admin'),
     		'nombres' => 'Administrador',
-    		'apellidos' => 'AF',
+    		'apellidos' => 'Preparaduría',
     		'id_rol' => '3',
     	]);
 
@@ -51,7 +50,7 @@ class UsuariosSeeder extends Seeder
     	User::create(['nombre_usuario' => 'jefe.area',
     		'password' => Hash::make('admin'),
     		'nombres' => 'Jefe de',
-    		'apellidos' => 'Coordinación',
+    		'apellidos' => 'Area',
     		'id_rol' => '5',
     		'id_coord' => '1',
     		'id_area' => '1',
@@ -60,7 +59,7 @@ class UsuariosSeeder extends Seeder
     	User::create(['nombre_usuario' => 'usuario',
     		'password' => Hash::make('admin'),
     		'nombres' => 'usuario',
-    		'apellidos' => 'de AF',
+    		'apellidos' => 'AF',
     		'id_rol' => '6',
     		'id_coord' => '1',
     		'id_area' => '1',
