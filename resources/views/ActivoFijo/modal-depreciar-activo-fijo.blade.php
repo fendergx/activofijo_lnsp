@@ -9,20 +9,26 @@
 			<!-- Titulo modal-->
 			<div class="modal-header col-sm-12 justify-content-center">
 				<h5 class="modal-title" style="text-align: center;">
-					<strong>Drepreciar 
+					<strong>Depreciar el activo&nbsp;
 						<label id="label_af"></label>
 					</strong>
 				</h5>
 			</div>
- 
 			<!-- Cuerpo modal-->
 			<div class="modal-body">
 				<input type="hidden" name="_token" value="{{ csrf_token()}}" id="token">
 
 				<div class="form-group row">
-					<label for="valor_actual_af" class="col-sm-4 col-form-label text-sm-right">Valor actual: <span class="text-danger" title="Requerido"><b>*</b></span></label>
+					<label for="valor_actual_af" class="col-md-4 col-form-label text-md-right"><b>Valor actual:</b></label>
+					<div class="col-md-6">
+						<label for="valor_actual_af" id="valor_actual_af" class="col-form-label text-md-left"></label>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="nuevo" class="col-sm-4 col-form-label text-sm-right">Nuevo valor: <span class="text-danger" title="Requerido"><b>*</b></span></label>
 					<div class="col-sm-8">
-						<input id="valor_actual_af" type="text" class="form-control" autofocus>
+						<input id="nuevo" type="number" class="form-control" required autofocus>
 					</div>
 				</div>
 			</div>

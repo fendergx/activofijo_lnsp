@@ -62,10 +62,9 @@ Depreciación de activos fijos
 						{{\Carbon\Carbon::parse($activo->fecha_depreciado)->format('d/m/Y (H:i)')}}
 					</td>
 					@endif
-
 					<td>
-						<button class="depreciar-modal btn btn-primary" href="#" data-id="{{$activo->id_af}}">
-							<span class="fas fa-sort-numeric-down-alt" data-id="{{$activo->id_af}}" data-nombre="{{$activo->nombre_af}}" data-actual="{{$activo->valor_actual_af}}"></span>&nbsp;Depreciar
+						<button class="modal-depreciacion btn btn-primary" href="#" data-id="{{$activo->id_af}}" data-nombre="{{$activo->nombre_af}}" data-actual="{{$activo->valor_actual_af}}">
+							<span class="fas fa-sort-numeric-down-alt"></span>&nbsp;Depreciar
 						</button>
 					</td>
 				</tr>
