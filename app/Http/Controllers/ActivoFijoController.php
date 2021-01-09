@@ -133,7 +133,7 @@ class ActivoFijoController extends Controller
         $Activo->save();
             //return $Activo;
             //return response()->json($Activo);
-        return View('ActivoFijo.index'); 
+        return redirect('/af/'); 
         //return back()->withInput();
     }
 
