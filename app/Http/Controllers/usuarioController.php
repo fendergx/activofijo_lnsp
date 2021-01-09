@@ -56,15 +56,15 @@ class usuarioController extends Controller
 
     public function edit($id)
     {
-       $usuario = User::findOrFail($id);
-       $roles = Rol::all();
-       $areas = Area::all();
-       $coordinaciones = Coordinacion::all();
-       return view('usuario.edit',['usuario' => $usuario,'roles' => $roles,'areas' => $areas,'coordinaciones' => $coordinaciones]);
-   }
+     $usuario = User::findOrFail($id);
+     $roles = Rol::all();
+     $areas = Area::all();
+     $coordinaciones = Coordinacion::all();
+     return view('usuario.edit',['usuario' => $usuario,'roles' => $roles,'areas' => $areas,'coordinaciones' => $coordinaciones]);
+ }
 
-   public function perfil()
-   {
+ public function perfil()
+ {
     $usuarios = Auth::user();
     return view('usuario.perfil',['usuarios' => $usuarios]);
 }
@@ -85,13 +85,9 @@ public function areas($id){
      */
     public function store(Request $request)
     {
-        $existe = User::where('nombre_usuario','=',$request->nombre_usuario)->pluck('nombre_usuario');
-
         $validator = Validator::make($request->all(), $this->rules);
         if ($validator->fails()) {
             Return Response::json(array('errors' => $validator->getMessageBag()->toArray()));
-        } else if(!empty($existe)){
-            return back()->withInput()->with('status', 'El usuario '.$request->nombre_usuario.' ya existe');;
         }else{
             $usuario = new User();
             $usuario->nombre_usuario = $request->nombre_usuario;
