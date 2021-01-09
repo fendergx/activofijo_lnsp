@@ -40,7 +40,7 @@
             <a class="nav-link" href="{{route('activofijo.index')}}">Activo Fijo</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="De movimiento de activo fijo">Solicitudes</a> 
+            <a class="nav-link" href="{{route('solicitud_af.index')}}" data-toggle="tooltip" data-placement="bottom" title="De movimiento de activo fijo">Solicitudes</a> 
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Formularios</a>
