@@ -46,6 +46,7 @@ class ClienteController extends Controller
         } else {
             $cliente = new Cliente_preparaduria();
             $cliente->nombre_cliente = $request->nombre_cliente;
+            $cliente->id_dep = 1;
             $cliente->save();
             return response()->json($cliente);
         }
