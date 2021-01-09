@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
         
         $this->call(ActivoFijoSeeder::class);
         $this->call(SolicitudSeeder::class);
+        $this->call(ClaseDeMovimientoSeeder::class);
 
     }
 }
