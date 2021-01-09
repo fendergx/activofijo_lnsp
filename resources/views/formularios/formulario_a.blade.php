@@ -92,7 +92,7 @@ Formulario A
 
 		<div class="form-group row mb-0">
 			<div class="col-md-6 offset-md-4">
-				<a href="{{route('inicio.admin')}}" class="btn btn-secondary">
+				<a href="{{ url()->previous() }}" class="btn btn-secondary">
 					Cancelar
 				</a>
 				<a class="btn btn-primary" data-toggle="modal" data-target="#modal-generar-reporte" href="#">
