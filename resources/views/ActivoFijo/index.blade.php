@@ -39,6 +39,14 @@ Gestión de activos fijos
 				{{ csrf_field() }}
 			</thead>
 			<tbody>
+				@if(count($activos)<=0)
+				<script type="text/javascript">
+					window.onload = function() {
+						toastr.clear();
+						toastr.info('No hay activos para listar', 'Información', {timeOut: 7000});
+					};
+				</script>
+				@endif
 
 				@foreach($activos as $indexKey => $activo)
 				<tr class="item{{$activo->id_af}}">
