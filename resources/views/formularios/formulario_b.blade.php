@@ -107,9 +107,32 @@ Formulario B
 				<a href="{{route('inicio.admin')}}" class="btn btn-secondary">
 					Cancelar
 				</a>
-				<button type="submit" class="btn btn-primary">
+				<a class="btn btn-primary" data-toggle="modal" data-target="#modal-generar-reporte" href="#">
 					Generar Reporte
-				</button>
+				</a>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modal-generar-reporte">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="col-sm-12 justify-content-right">
+						<button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-header col-sm-12 justify-content-center">
+						<h5 class="modal-title" style="text-align: center;"><strong>Generar reporte</strong></h5>
+					</div>
+					<div class="modal-body">
+						<div id="modal-body-eliminar">
+							<h5 class="text-center">Al generar el reporte, este se renderizará como PDF en su pantalla al instante</h5>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-secondary" id="cancelar-accion" data-dismiss="modal">Cancelar</button>
+						<a class="btn btn-primary" href="{{route('reporte.b',['id' => 1])}}">Generar</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</form>

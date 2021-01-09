@@ -8,6 +8,9 @@ use App\Models\Coordinacion;
 use App\Models\ClaseMovimiento;
 use App\Models\ActivoFijo;
 
+use PDF;
+use Carbon\Carbon;
+
 
 class FormularioB_Controller extends Controller
 {
@@ -25,6 +28,14 @@ class FormularioB_Controller extends Controller
 			'coordinaciones'=>$coordinaciones,
 			'clases'=>$clases
 		]);
+	}
+
+	public function reporte(){
+		$data = ActivoFijo::all();
+		error_reporting(E_ALL ^ E_DEPRECATED);
+		$pdf = PDF::loadView('reportes.reporte_b',compact('data'));
+		$pdf->setPaper('letter', 'portrait');
+		return $pdf->stream('pdf-'.date('d-m-Y').'.pdf',array('Attachment'=>0));;
 	}
 
 	public function store(){

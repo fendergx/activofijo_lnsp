@@ -133,7 +133,10 @@ Route::post('formulario/salida','Formulario_OrdenSalida_Controller@store')->name
 
 
 //reportes
-Route::get('reporte/a','FormularioA_Controller@reporte')->name('reporte.a');
+Route::get('reporte/a/{id}','FormularioA_Controller@reporte')->name('reporte.a');
+Route::get('reporte/b/{id}','FormularioB_Controller@reporte')->name('reporte.b');
+Route::get('reporte/c/{id}','FormularioC_Controller@reporte')->name('reporte.c');
+Route::get('reporte/d/{id}','FormularioD_Controller@reporte')->name('reporte.d');
 
 //Excel
 Route::get('excel','ExcelController@exportarExcel')->name('excel.export.af');
