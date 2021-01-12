@@ -215,28 +215,28 @@ class ActivoFijoController extends Controller
      */
     public function update(Request $request, $id)
     {
-    
-            $Activo = ActivoFijo::findOrFail($id);
-            $Activo->codigo_af = $request->codigo_af;
-            $Activo->nombre_af = $request->nombre_af;
-            $Activo->marca_af = $request->marca_af;
-            $Activo->modelo_af = $request->modelo_af;
-            $Activo->serie_af = $request->serie_af;
-            $Activo->fecha_adq_af = $request->fecha_adq_af;
-            $Activo->valor_adq_af = $request->valor_adq_af;
-            $Activo->valor_actual_af = $request->valor_actual_af;
-            $Activo->descripcion_af = $request->descripcion_af;
-            $Activo->desecha_af = false;
-            $Activo->export_af = false;
-            $Activo->id_coord = $request->id_coord;
-            $Activo->id_area = $request->id_area;
-            $Activo->id_ubicacion = $request->id_ubicacion;
-            $Activo->id_estado = 1;
-            $Activo->id_color = $request->id_color;
-            $Activo->id_fuente = $request->id_fuente;
-            $Activo->persona_responsable = $request->persona_responsable;
-            $Activo->save();
-            return response()->json($Activo);
+        
+        $Activo = ActivoFijo::findOrFail($id);
+        $Activo->codigo_af = $request->codigo_af;
+        $Activo->nombre_af = $request->nombre_af;
+        $Activo->marca_af = $request->marca_af;
+        $Activo->modelo_af = $request->modelo_af;
+        $Activo->serie_af = $request->serie_af;
+        $Activo->fecha_adq_af = $request->fecha_adq_af;
+        $Activo->valor_adq_af = $request->valor_adq_af;
+        $Activo->valor_actual_af = $request->valor_actual_af;
+        $Activo->descripcion_af = $request->descripcion_af;
+        $Activo->desecha_af = false;
+        $Activo->export_af = false;
+        $Activo->id_coord = $request->id_coord;
+        $Activo->id_area = $request->id_area;
+        $Activo->id_ubicacion = $request->id_ubicacion;
+        $Activo->id_estado = 1;
+        $Activo->id_color = $request->id_color;
+        $Activo->id_fuente = $request->id_fuente;
+        $Activo->persona_responsable = $request->persona_responsable;
+        $Activo->save();
+        return response()->json($Activo);
         
     }
 
@@ -248,6 +248,8 @@ class ActivoFijoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $area = ActivoFijo::findOrFail($id);
+        $area->delete();
+        return response()->json($area);
     }
 }
