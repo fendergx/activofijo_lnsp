@@ -190,7 +190,20 @@ class ActivoFijoController extends Controller
     public function edit($id)
     {
         $activo = ActivoFijo::where('id_af', $id)->get();
-        return view('ActivoFijo.editar',['activo' => $activo]);
+        $Colores = Color_af::all();
+        $Ubicaciones = Ubicacion_af::all();
+        $Fuentes = Fuente_activo::all();
+        $Usuarios = User::all();
+        $coordinaciones = Coordinacion::All();
+        $areas = Area::All();
+        return view('ActivoFijo.editar',[
+            'activo' => $activo,
+            'Colores' => $Colores,
+            'Ubicaciones' => $Ubicaciones,
+            'Fuentes' => $Fuentes,
+            'Usuarios' => $Usuarios,
+            'coordinaciones' => $coordinaciones,
+            'areas' => $areas]);
     }
 
     /**
@@ -202,7 +215,29 @@ class ActivoFijoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    
+            $Activo = ActivoFijo::findOrFail($id);
+            $Activo->codigo_af = $request->codigo_af;
+            $Activo->nombre_af = $request->nombre_af;
+            $Activo->marca_af = $request->marca_af;
+            $Activo->modelo_af = $request->modelo_af;
+            $Activo->serie_af = $request->serie_af;
+            $Activo->fecha_adq_af = $request->fecha_adq_af;
+            $Activo->valor_adq_af = $request->valor_adq_af;
+            $Activo->valor_actual_af = $request->valor_actual_af;
+            $Activo->descripcion_af = $request->descripcion_af;
+            $Activo->desecha_af = false;
+            $Activo->export_af = false;
+            $Activo->id_coord = $request->id_coord;
+            $Activo->id_area = $request->id_area;
+            $Activo->id_ubicacion = $request->id_ubicacion;
+            $Activo->id_estado = 1;
+            $Activo->id_color = $request->id_color;
+            $Activo->id_fuente = $request->id_fuente;
+            $Activo->persona_responsable = $request->persona_responsable;
+            $Activo->save();
+            return response()->json($Activo);
+        
     }
 
     /**

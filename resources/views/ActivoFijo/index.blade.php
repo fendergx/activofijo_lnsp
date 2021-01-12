@@ -57,15 +57,15 @@ Gestión de activos fijos
 					<td>{{$activo->estado->estado_af}}</td>
 					<td>{{$activo->modelo_af}}</td>
 					<td>
-						<a class="btn btn-info" href="#">
+						<a href="{{route('activofijo.detalle',['id' => $activo->id_af])}} " class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Ver detalles del activo">
+							<span class="fas fa-eye"></span>Detalle
+						</a>
+						<a class="btn btn-info" href="{{route('activofijo.edit',['id' => $activo->id_af])}}">
 							<span class="fas fa-edit"></span>&nbsp;Editar
 						</a>
 						<button class="delete-modal btn btn-danger" href="#" data-id="{{$activo->id_af}}">
 							<span class="fas fa-trash"></span>&nbsp;Eliminar
 						</button>
-						<a href="{{route('activofijo.detalle',['id' => $activo->id_af])}} " class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Ver detalles del activo">
-							<span class="fas fa-eye"></span>
-						</a>
 					</td>
 				</tr>
 				@endforeach
